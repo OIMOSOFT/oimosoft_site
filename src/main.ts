@@ -1,5 +1,28 @@
 import './style.css'
 
+import imgLogo from './assets/logoo.svg'
+import imgSyimyk from './assets/syimyk.png'
+import imgBekturgaan from './assets/bekturgaan.png'
+import imgMustafa from './assets/mustafa.jpeg'
+import imgAziret from './assets/aziret.png'
+import imgKurmanbek from './assets/kurmanbek.jpg'
+import imgMyktybek from './assets/myktybek.png'
+import imgAsyl from './assets/asyl.png'
+import imgIskender from './assets/iskender.jpg'
+import imgKutman from './assets/kutman.png'
+import imgMaks from './assets/maks.jpg'
+import imgAjybek from './assets/ajybek.jpg'
+import imgProgrammingbro from './assets/Programmingbro.png'
+import imgMp from './assets/mp.jpeg'
+import imgSait from './assets/sait.jpeg'
+import img2d from './assets/2d.jpeg'
+import img3d from './assets/3d.jpeg'
+import imgItkurs from './assets/itkurs.jpeg'
+import imgSystem from './assets/System.jpeg'
+import imgEcommerce from './assets/Ecommerce.jpeg'
+import imgCRM from './assets/CRM.jpeg'
+import imgB2B from './assets/B2B.jpeg'
+
 type Language = 'ky' | 'ru' | 'en'
 
 type LocalizedText = Record<Language, string>
@@ -46,7 +69,7 @@ let currentLanguage: Language = isLanguage(localStorage.getItem('oimosoft-langua
 const getText = (value: string | LocalizedText) =>
   typeof value === 'string' ? value : value[currentLanguage]
 
-const logoUrl = '/src/assets/logoo.svg'
+const logoUrl = imgLogo
 const EMAILJS_ENDPOINT = 'https://api.emailjs.com/api/v1.0/email/send'
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID?.trim() ?? ''
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim() ?? ''
@@ -430,7 +453,7 @@ const leaders: Leader[] = [
       'Shapes strategy, grows partnerships, and leads the company from idea to strong product.'
     ),
     accent: '#F28C28',
-    photo: '/src/assets/syimyk.png'
+    photo: imgSyimyk
   },
   {
     id: 'bekturgan',
@@ -442,7 +465,7 @@ const leaders: Leader[] = [
       'Builds processes, keeps the team in sync, and turns client tasks into clear results.'
     ),
     accent: '#F25C2A',
-    photo: '/src/assets/bekturgaan.png'
+    photo: imgBekturgaan
   },
   {
     id: 'mustafa',
@@ -454,7 +477,7 @@ const leaders: Leader[] = [
       'Owns architecture, release quality, and product stability under growth and load.'
     ),
     accent: '#F29F2D',
-    photo: '/src/assets/mustafa.jpeg'
+    photo: imgMustafa
   },
   {
     id: 'aziret',
@@ -466,7 +489,7 @@ const leaders: Leader[] = [
       'Builds modern Flutter apps with intuitive interfaces, stable logic, and a polished user experience.'
     ),
     accent: '#16A34A',
-    photo: '/src/assets/aziret.png'
+    photo: imgAziret
   },
   {
     id: 'kurmanbek',
@@ -478,7 +501,7 @@ const leaders: Leader[] = [
       'Backend developer building server logic, APIs, and databases for stable and reliable systems.'
     ),
     accent: '#22C55E',
-    photo: '/src/assets/kurmanbek.jpg'
+    photo: imgKurmanbek
   },
   {
     id: 'myktybek',
@@ -490,7 +513,7 @@ const leaders: Leader[] = [
       'Leads the YouTube direction by combining analytics, AI tools, and expert editing to grow content.'
     ),
     accent: '#10B981',
-    photo: '/src/assets/myktybek.png'
+    photo: imgMyktybek
   },
   {
     id: 'asylbek',
@@ -502,7 +525,7 @@ const leaders: Leader[] = [
       'Creates high-quality visual content through 3D motion work and video editing.'
     ),
     accent: '#14B8A6',
-    photo: '/src/assets/asyl.png'
+    photo: imgAsyl
   },
   {
     id: 'iskender',
@@ -514,7 +537,7 @@ const leaders: Leader[] = [
       'Works across web development and 3D animation, creating modern digital solutions and visually expressive projects.'
     ),
     accent: '#22C55E',
-    photo: '/src/assets/iskender.jpg'
+    photo: imgIskender
   },
   {
     id: 'kutman',
@@ -526,7 +549,7 @@ const leaders: Leader[] = [
       'Creates 3D animation and models, refining detail, visual style, and execution quality for vivid and realistic project delivery.'
     ),
     accent: '#34D399',
-    photo: '/src/assets/kutman.png'
+    photo: imgKutman
   },
   {
     id: 'maksatbek',
@@ -538,7 +561,7 @@ const leaders: Leader[] = [
       'Designs modern web interfaces and Flutter apps, combining user-friendly UX with quality digital solutions.'
     ),
     accent: '#22C55E',
-    photo: '/src/assets/maks.JPG'
+    photo: imgMaks
   },
   {
     id: 'ajybek',
@@ -550,7 +573,7 @@ const leaders: Leader[] = [
       'Works across web design and Flutter, creating modern interfaces and user-friendly mobile solutions.'
     ),
     accent: '#16A34A',
-    photo: '/src/assets/ajybek.jpg'
+    photo: imgAjybek
   }
 ]
 
@@ -875,7 +898,7 @@ const serviceCards: ServiceCard[] = [
       'iOS жана Android үчүн ылдамдыкка жана ишенимдүүлүккө багытталган мобилдик тажрыйба түзөбүз.',
       'We launch iOS and Android experiences focused on speed and reliability.'
     ),
-    image: '/src/assets/mp.jpeg'
+    image: imgMp
   },
   {
     title: localized('Сайты и веб‑сервисы', 'Сайттар жана веб‑сервистер', 'Websites and web services'),
@@ -884,7 +907,7 @@ const serviceCards: ServiceCard[] = [
       'Күчтүү архитектурасы жана заманбап интерфейси бар ылдам веб‑продукттарды жасайбыз.',
       'We build fast web products with strong architecture and modern UI.'
     ),
-    image: '/src/assets/sait.jpeg'
+    image: imgSait
   },
   {
     title: localized('2D игры', '2D оюндар', '2D games'),
@@ -893,7 +916,7 @@ const serviceCards: ServiceCard[] = [
       'Дизайн, механика, аналитика жана жарыялоо менен кызыктуу 2D долбоорлорду жасайбыз.',
       'We create engaging 2D projects with design, mechanics, analytics, and publishing.'
     ),
-    image: '/src/assets/2d.jpeg'
+    image: img2d
   },
   {
     title: localized('3D моделирование', '3D моделдөө', '3D modeling'),
@@ -902,7 +925,7 @@ const serviceCards: ServiceCard[] = [
       'Презентациялар, продукттар жана digital‑контент үчүн 3D моделдерди жана көрүнүштөрдү жасайбыз.',
       'We create 3D models and visual scenes for presentations, products, and digital content.'
     ),
-    image: '/src/assets/3d.jpeg'
+    image: img3d
   },
   {
     title: localized('IT‑курсы и обучение', 'IT‑курстар жана окутуу', 'IT courses and education'),
@@ -911,7 +934,7 @@ const serviceCards: ServiceCard[] = [
       'Экспертизаны курс жана академия форматына айландырабыз: программа, контент, ишке киргизүү.',
       'We package expertise into courses and academies: curriculum, content, and launch.'
     ),
-    image: '/src/assets/itkurs.jpeg'
+    image: imgItkurs
   },
   {
     title: localized('Telegram‑боты', 'Telegram‑боттор', 'Telegram bots'),
@@ -920,7 +943,7 @@ const serviceCards: ServiceCard[] = [
       'Сатуу, колдоо жана автоматташтыруу үчүн Telegram‑ботторду долбоорлоп ишке киргизебиз.',
       'We design and launch Telegram bots for sales, support, and automation.'
     ),
-    image: '/src/assets/System.jpeg'
+    image: imgSystem
   },
   {
     title: localized('E-commerce платформы', 'E-commerce платформалары', 'E-commerce platforms'),
@@ -929,7 +952,7 @@ const serviceCards: ServiceCard[] = [
       'Дүкөн, каталог, себет, төлөм жана жеткирүүнү бир ыңгайлуу продуктка бириктиребиз.',
       'We launch stores, catalogs, carts, payments, and delivery in one cohesive product.'
     ),
-    image: '/src/assets/Ecommerce.jpeg'
+    image: imgEcommerce
   },
   {
     title: localized('CRM / Admin панели', 'CRM / Admin панелдери', 'CRM / Admin panels'),
@@ -938,7 +961,7 @@ const serviceCards: ServiceCard[] = [
       'Буйрутмалар, колдонуучулар, контент жана аналитика үчүн ички башкаруу панелдерин жасайбыз.',
       'We build internal management panels for orders, users, content, and analytics.'
     ),
-    image: '/src/assets/CRM.jpeg'
+    image: imgCRM
   },
   {
     title: localized('Marketplace / B2B решения', 'Marketplace / B2B чечимдери', 'Marketplace / B2B solutions'),
@@ -947,7 +970,7 @@ const serviceCards: ServiceCard[] = [
       'Жеткирүүчүлөр, билдирмелер, дүң заказдар жана өнөктөш кабинеттер үчүн B2B-платформаларды түзөбүз.',
       'We design B2B platforms for suppliers, requests, wholesale orders, and partner dashboards.'
     ),
-    image: '/src/assets/B2B.jpeg'
+    image: imgB2B
   }
 ]
 
@@ -985,16 +1008,16 @@ const renderLanguageSwitcher = () => `
     </button>
     <div class="lang-menu" role="menu">
       ${languageItems
-        .filter(([lang]) => lang !== currentLanguage)
-        .map(
-          ([lang, label, flag]) => `
+    .filter(([lang]) => lang !== currentLanguage)
+    .map(
+      ([lang, label, flag]) => `
             <button class="lang-btn" type="button" data-lang="${lang}" role="menuitem">
               <span class="lang-flag" aria-hidden="true">${flag}</span>
               <span>${label}</span>
             </button>
           `
-        )
-        .join('')}
+    )
+    .join('')}
     </div>
   </div>
 `
@@ -1024,24 +1047,24 @@ const renderPrivacyPolicy = () => {
             </div>
           </div>
           ${copy.privacy.sections
-            .map(
-              (section) => `
+      .map(
+        (section) => `
                 <section class="privacy-section">
                   <h2>${section.title}</h2>
                   ${section.paragraphs
-                    .map((paragraph) =>
-                      paragraph.includes('oimosoft1@gmail.com')
-                        ? `<p>${paragraph.replace(
-                            'oimosoft1@gmail.com',
-                            '<a href="mailto:oimosoft1@gmail.com">oimosoft1@gmail.com</a>'
-                          )}</p>`
-                        : `<p>${paragraph}</p>`
-                    )
-                    .join('')}
-                </section>
-              `
+            .map((paragraph) =>
+              paragraph.includes('oimosoft1@gmail.com')
+                ? `<p>${paragraph.replace(
+                  'oimosoft1@gmail.com',
+                  '<a href="mailto:oimosoft1@gmail.com">oimosoft1@gmail.com</a>'
+                )}</p>`
+                : `<p>${paragraph}</p>`
             )
             .join('')}
+                </section>
+              `
+      )
+      .join('')}
         </div>
       </section>
     </section>
@@ -1051,12 +1074,12 @@ const renderPrivacyPolicy = () => {
 const renderStoreLinks = (links: Link[]) => `
   <div class="store-links">
     ${links
-      .map(
-        (link) => `
+    .map(
+      (link) => `
       <a class="store-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
     `
-      )
-      .join('')}
+    )
+    .join('')}
   </div>
 `
 
@@ -1148,7 +1171,7 @@ app.innerHTML = `
             <div class="hero-visual">
               <div class="macbook-stack">
                 <div class="hero-video">
-                  <img src="/src/assets/Programmingbro.png" alt="Programming illustration" />
+                  <img src="${imgProgrammingbro}" alt="Programming illustration" />
                 </div>
                 <div class="macbook-glow" aria-hidden="true"></div>
               </div>
@@ -1193,8 +1216,8 @@ app.innerHTML = `
           </div>
           <div class="service-row" id="services-row">
             ${serviceCards
-              .map(
-                (item) => `
+    .map(
+      (item) => `
               <article class="service-card reveal">
                 <div class="service-image">
                   <img src="${item.image}" alt="${getText(item.title)}" loading="lazy" />
@@ -1203,8 +1226,8 @@ app.innerHTML = `
                 <p>${getText(item.description)}</p>
               </article>
             `
-              )
-              .join('')}
+    )
+    .join('')}
           </div>
         </section>
 
@@ -1562,7 +1585,7 @@ const initTechCanvas = () => {
         const dx = other.x - node.x
         const dy = other.y - node.y
         const dist = Math.hypot(dx, dy)
-      if (dist < maxDist) {
+        if (dist < maxDist) {
           const alpha = (1 - dist / maxDist) * 0.35
           ctx.strokeStyle = `rgba(34, 197, 94, ${alpha})`
           ctx.lineWidth = 1
