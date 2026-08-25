@@ -1,23 +1,31 @@
 import './style.css'
 
-import imgLogo from './assets/logoo.svg'
-import imgSyimyk from './assets/syimyk.png'
-import imgBekturgaan from './assets/bekturgaan.png'
+import imgLogo from './assets/logo-orange.svg'
 import imgMustafa from './assets/mustafa.jpeg'
-import imgAziret from './assets/aziret.png'
 import imgKurmanbek from './assets/kurmanbek.jpg'
-import imgMyktybek from './assets/myktybek.png'
-import imgAsyl from './assets/asyl.png'
-import imgIskender from './assets/iskender.jpg'
-import imgKutman from './assets/kutman.png'
-import imgMaks from './assets/maks.jpg'
 import imgAjybek from './assets/ajybek.jpg'
-import imgProgrammingbro from './assets/Programmingbro.png'
+import imgBayel from './assets/bayel.jpg'
+import iconAddTest from './assets/app-icons/add-test.png'
+import iconAlltrust from './assets/app-icons/alltrust.png'
+import iconAydaTaxi from './assets/app-icons/ayda-taxi.jpg'
+import iconAyuGarant from './assets/app-icons/ayu-garant.jpg'
+import iconCashbackAlleya from './assets/app-icons/cashback-alleya.jpg'
+import iconDoctorKg from './assets/app-icons/doctor-kg.png'
+import iconFinopolis from './assets/app-icons/finopolis.jpg'
+import iconFreshMag from './assets/app-icons/fresh-mag.jpg'
+import iconJashylBonus from './assets/app-icons/jashyl-bonus.jpg'
+import iconMedicallPro from './assets/app-icons/medicall-pro.jpg'
+import iconMedicall from './assets/app-icons/medicall.jpg'
+import iconMyQuran from './assets/app-icons/my-quran.jpg'
+import iconNedvizhkaKg from './assets/app-icons/nedvizhka-kg.jpg'
+import iconOptombai from './assets/app-icons/optombai.jpg'
+import iconSezUs from './assets/app-icons/sez-us.jpg'
+import iconSikaProClub from './assets/app-icons/sika-pro-club.jpg'
+import iconStudent from './assets/app-icons/student.png'
+import iconTilbil from './assets/app-icons/tilbil.png'
 import imgMp from './assets/mp.jpeg'
 import imgSait from './assets/sait.jpeg'
 import img2d from './assets/2d.jpeg'
-import img3d from './assets/3d.jpeg'
-import imgItkurs from './assets/itkurs.jpeg'
 import imgSystem from './assets/System.jpeg'
 import imgEcommerce from './assets/Ecommerce.jpeg'
 import imgCRM from './assets/CRM.jpeg'
@@ -70,10 +78,28 @@ const getText = (value: string | LocalizedText) =>
   typeof value === 'string' ? value : value[currentLanguage]
 
 const logoUrl = imgLogo
-const EMAILJS_ENDPOINT = 'https://api.emailjs.com/api/v1.0/email/send'
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID?.trim() ?? ''
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim() ?? ''
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim() ?? ''
+
+const projectIcons: Record<string, string> = {
+  'add-test': iconAddTest,
+  'alltrust': iconAlltrust,
+  'ayda-taxi': iconAydaTaxi,
+  'ayu-garant': iconAyuGarant,
+  'cashback-alleya': iconCashbackAlleya,
+  'doctor-kg': iconDoctorKg,
+  'finopolis': iconFinopolis,
+  'fresh-mag': iconFreshMag,
+  'jashyl-bonus': iconJashylBonus,
+  'medicall-pro': iconMedicallPro,
+  'medicall': iconMedicall,
+  'my-quran': iconMyQuran,
+  'nedvizhka-kg': iconNedvizhkaKg,
+  'optombai': iconOptombai,
+  'sez-us': iconSezUs,
+  'sika-pro-club': iconSikaProClub,
+  'student': iconStudent,
+  'tilbil': iconTilbil,
+}
+const WHATSAPP_NUMBER = '996507158857'
 
 const uiCopy = {
   ru: {
@@ -101,7 +127,7 @@ const uiCopy = {
         placeholders: {
           name: 'Ваше имя',
           email: 'example@mail.com',
-          phone: '+996 (___) ___ ___',
+          phone: '+996 555 00 00 00',
           message: 'Коротко о задаче'
         },
         submit: 'Отправить',
@@ -178,7 +204,7 @@ const uiCopy = {
         {
           title: 'Contact Us',
           paragraphs: [
-            'If you have questions or concerns about this Privacy Policy, you can contact us at oimosoft1@gmail.com.'
+            'If you have questions or concerns about this Privacy Policy, you can contact us at admin@oimosoft.com.'
           ]
         }
       ]
@@ -209,7 +235,7 @@ const uiCopy = {
         placeholders: {
           name: 'Атыңыз',
           email: 'example@mail.com',
-          phone: '+996 (___) ___ ___',
+          phone: '+996 555 00 00 00',
           message: 'Тапшырма жөнүндө кыскача'
         },
         submit: 'Жөнөтүү',
@@ -286,7 +312,7 @@ const uiCopy = {
         {
           title: 'Байланыш',
           paragraphs: [
-            'Эгерде бул Купуялык саясаты боюнча суроолоруңуз же тынчсызданууңуз болсо, oimosoft1@gmail.com дарегине жаза аласыз.'
+            'Эгерде бул Купуялык саясаты боюнча суроолоруңуз же тынчсызданууңуз болсо, admin@oimosoft.com дарегине жаза аласыз.'
           ]
         }
       ]
@@ -317,7 +343,7 @@ const uiCopy = {
         placeholders: {
           name: 'Your name',
           email: 'example@mail.com',
-          phone: '+996 (___) ___ ___',
+          phone: '+996 555 00 00 00',
           message: 'Briefly describe your task'
         },
         submit: 'Send',
@@ -394,7 +420,7 @@ const uiCopy = {
         {
           title: 'Contact Us',
           paragraphs: [
-            'If you have questions or concerns about this Privacy Policy, you can contact us at oimosoft1@gmail.com.'
+            'If you have questions or concerns about this Privacy Policy, you can contact us at admin@oimosoft.com.'
           ]
         }
       ]
@@ -444,52 +470,28 @@ const uiCopy = {
 
 const leaders: Leader[] = [
   {
-    id: 'syymyk',
-    name: 'Абдыбек уулу Сыймык',
-    role: 'Director',
-    tagline: localized(
-      'Формирует стратегию, развивает партнерства и ведет компанию от идеи к сильному продукту.',
-      'Стратегияны түзүп, өнөктөштүктөрдү өнүктүрүп, компанияны идеядан күчтүү продуктка чейин алып барат.',
-      'Shapes strategy, grows partnerships, and leads the company from idea to strong product.'
-    ),
-    accent: '#F28C28',
-    photo: imgSyimyk
-  },
-  {
-    id: 'bekturgan',
-    name: 'Зулпукаров Бектурган',
-    role: 'Manager',
-    tagline: localized(
-      'Выстраивает процессы, держит ритм команды и превращает задачи клиентов в четкий результат.',
-      'Процесстерди түзүп, команданын ритмин кармайт жана кардар тапшырмаларын так жыйынтыкка айлантат.',
-      'Builds processes, keeps the team in sync, and turns client tasks into clear results.'
-    ),
-    accent: '#F25C2A',
-    photo: imgBekturgaan
-  },
-  {
     id: 'mustafa',
     name: 'Мустафа Набиев',
-    role: 'Tech Lead',
+    role: 'CEO & Founder',
     tagline: localized(
-      'Отвечает за архитектуру, качество релизов и устойчивость продукта под рост и нагрузку.',
-      'Архитектурага, релиздердин сапатына жана продукттун өсүүгө даяр туруктуулугуна жооп берет.',
-      'Owns architecture, release quality, and product stability under growth and load.'
+      'Основатель OimoSoft: формирует стратегию компании, отвечает за архитектуру продуктов и качество релизов.',
+      'OimoSoft компаниясынын негиздөөчүсү: стратегияны түзөт, продукттардын архитектурасына жана релиздердин сапатына жооп берет.',
+      'Founder of OimoSoft: sets company strategy and owns product architecture and release quality.'
     ),
     accent: '#F29F2D',
     photo: imgMustafa
   },
   {
-    id: 'aziret',
-    name: 'Азирет Абдималиков',
-    role: 'Flutter Developer',
+    id: 'bayel',
+    name: 'Ташпулатов Байэл',
+    role: 'Full Stack Developer',
     tagline: localized(
-      'Разрабатывает современные мобильные приложения на Flutter, создавая удобный интерфейс, стабильную логику и качественный пользовательский опыт.',
-      'Flutter аркылуу заманбап мобилдик тиркемелерди иштеп чыгып, ыңгайлуу интерфейс, туруктуу логика жана сапаттуу колдонуучу тажрыйбасын түзөт.',
-      'Builds modern Flutter apps with intuitive interfaces, stable logic, and a polished user experience.'
+      'Full stack-разработчик: закрывает и фронтенд, и серверную часть — от интерфейса до API и базы данных.',
+      'Full stack-иштеп чыгуучу: фронтендди да, сервердик бөлүктү да жасайт — интерфейстен API жана маалымат базасына чейин.',
+      'Full stack developer covering both frontend and backend — from interface to APIs and databases.'
     ),
-    accent: '#16A34A',
-    photo: imgAziret
+    accent: '#F5921E',
+    photo: imgBayel
   },
   {
     id: 'kurmanbek',
@@ -504,73 +506,13 @@ const leaders: Leader[] = [
     photo: imgKurmanbek
   },
   {
-    id: 'myktybek',
-    name: 'Туркбаев Мыктыбек',
-    role: 'YouTube Team Lead',
-    tagline: localized(
-      'Руководит YouTube-направлением, объединяя аналитику, AI-инструменты и экспертный монтаж для роста контента.',
-      'YouTube багытын жетектеп, контенттин өсүшү үчүн аналитиканы, AI-куралдарын жана сапаттуу монтажды бириктирет.',
-      'Leads the YouTube direction by combining analytics, AI tools, and expert editing to grow content.'
-    ),
-    accent: '#10B981',
-    photo: imgMyktybek
-  },
-  {
-    id: 'asylbek',
-    name: 'Кудайбердиев Асылбек',
-    role: '3D Motion Designer & Video Editor',
-    tagline: localized(
-      'Создает качественный визуальный контент с помощью 3D-графики и видео монтажа.',
-      '3D жана видео монтаж аркылуу сапаттуу визуалдык контент жаратат.',
-      'Creates high-quality visual content through 3D motion work and video editing.'
-    ),
-    accent: '#14B8A6',
-    photo: imgAsyl
-  },
-  {
-    id: 'iskender',
-    name: 'Азамов Искендер',
-    role: 'Web Developer & 3D Animator',
-    tagline: localized(
-      'Занимается веб-разработкой и 3D-анимацией, создавая современные цифровые решения и визуально выразительные проекты.',
-      'Веб-иштеп чыгуу жана 3D-анимация менен алектенип, заманбап санарип чечимдерди жана көркөм долбоорлорду жаратат.',
-      'Works across web development and 3D animation, creating modern digital solutions and visually expressive projects.'
-    ),
-    accent: '#22C55E',
-    photo: imgIskender
-  },
-  {
-    id: 'kutman',
-    name: 'Турдумаматов Кутман',
-    role: '3D Animator',
-    tagline: localized(
-      'Создает 3D-анимацию и модели, прорабатывая детали, визуальный стиль и качество исполнения для яркой и реалистичной подачи проекта.',
-      'Долбоорду жаркын жана реалистүү берүү үчүн 3D-анимация жана моделдерди жасап, деталдарды, визуалдык стилди жана аткаруу сапатын иштеп чыгат.',
-      'Creates 3D animation and models, refining detail, visual style, and execution quality for vivid and realistic project delivery.'
-    ),
-    accent: '#34D399',
-    photo: imgKutman
-  },
-  {
-    id: 'maksatbek',
-    name: 'Максатбек Рысбек уулу',
-    role: 'Web Designer & Flutter Developer',
-    tagline: localized(
-      'Создает современный веб-дизайн и Flutter-приложения, объединяя удобный интерфейс и качественные цифровые решения.',
-      'Заманбап веб-дизайн жана Flutter тиркемелерин иштеп чыгып, колдонуучуга ыңгайлуу интерфейс менен сапаттуу санарип чечимдерди жаратат.',
-      'Designs modern web interfaces and Flutter apps, combining user-friendly UX with quality digital solutions.'
-    ),
-    accent: '#22C55E',
-    photo: imgMaks
-  },
-  {
     id: 'ajybek',
     name: 'Рахманбердиев Ажыбек',
-    role: 'Flutter Developer',
+    role: 'Mobile Developer',
     tagline: localized(
-      'Работает в направлениях веб-дизайна и Flutter, создавая современные интерфейсы и удобные мобильные решения.',
-      'Веб-дизайн жана Flutter багытында иштеп, заманбап интерфейстерди жана колдонуучуга ыңгайлуу мобилдик чечимдерди түзөт.',
-      'Works across web design and Flutter, creating modern interfaces and user-friendly mobile solutions.'
+      'Мобильный разработчик: делает приложения на Flutter для iOS и Android — от интерфейса до стабильной работы.',
+      'Мобилдик иштеп чыгуучу: iOS жана Android үчүн Flutter тиркемелерин жасайт — интерфейстен туруктуу иштөөгө чейин.',
+      'Mobile developer building Flutter apps for iOS and Android — from interface to stable performance.'
     ),
     accent: '#16A34A',
     photo: imgAjybek
@@ -578,6 +520,28 @@ const leaders: Leader[] = [
 ]
 
 const studioProjects: StudioProject[] = [
+  {
+    id: 'ayda-taxi',
+    title: 'Ayda Taxi',
+    summary: localized(
+      'Сервис заказа такси: подача машины, маршрут поездки и оплата в приложении.',
+      'Такси чакыруу сервиси: унаа берүү, каттам жана тиркеме аркылуу төлөө.',
+      'Taxi booking service: car dispatch, trip route, and in-app payment.'
+    ),
+    appStoreId: '6802663867',
+    appStoreCountry: 'kg',
+    playId: 'com.aydataxi.app',
+    links: [
+      {
+        label: 'Google Play',
+        url: 'https://play.google.com/store/apps/details?id=com.aydataxi.app'
+      },
+      {
+        label: 'App Store',
+        url: 'https://apps.apple.com/kg/app/aydataxi/id6802663867'
+      }
+    ]
+  },
   {
     id: 'nedvizhka-kg',
     title: 'Недвижка KG',
@@ -877,7 +841,7 @@ const studioProjects: StudioProject[] = [
   }
 ]
 
-const preferredProjectOrder = ['sez-us', 'fresh-mag', 'finopolis', 'sika-pro-club']
+const preferredProjectOrder = ['ayda-taxi', 'sez-us', 'fresh-mag', 'finopolis', 'sika-pro-club']
 
 const orderedStudioProjects = [...studioProjects].sort((a, b) => {
   const aPriority = preferredProjectOrder.indexOf(a.id)
@@ -919,24 +883,6 @@ const serviceCards: ServiceCard[] = [
     image: img2d
   },
   {
-    title: localized('3D моделирование', '3D моделдөө', '3D modeling'),
-    description: localized(
-      'Создаем 3D‑модели и визуальные сцены для презентаций, продуктов и digital‑контента.',
-      'Презентациялар, продукттар жана digital‑контент үчүн 3D моделдерди жана көрүнүштөрдү жасайбыз.',
-      'We create 3D models and visual scenes for presentations, products, and digital content.'
-    ),
-    image: img3d
-  },
-  {
-    title: localized('IT‑курсы и обучение', 'IT‑курстар жана окутуу', 'IT courses and education'),
-    description: localized(
-      'Пакуем экспертизу в курсы и академии: программа, контент, запуск.',
-      'Экспертизаны курс жана академия форматына айландырабыз: программа, контент, ишке киргизүү.',
-      'We package expertise into courses and academies: curriculum, content, and launch.'
-    ),
-    image: imgItkurs
-  },
-  {
     title: localized('Telegram‑боты', 'Telegram‑боттор', 'Telegram bots'),
     description: localized(
       'Проектируем и запускаем Telegram‑ботов для продаж, поддержки и автоматизации.',
@@ -974,6 +920,108 @@ const serviceCards: ServiceCard[] = [
   }
 ]
 
+
+type ExtraCopy = {
+  cta: string
+  formOpening: string
+  formIncomplete: string
+  formEmailInvalid: string
+  formPhoneInvalid: string
+  formLead: string
+  heroSub: string
+  contacts: string
+  heroLead: string
+  heroCtaProjects: string
+  tickerLabel: string
+  tickerNote: string
+  figuresLabel: string
+  statApps: string
+  servicesHeading: string
+  viewAll: string
+  allProjectsTitle: string
+  backHome: string
+  shownOf: (shown: number, total: number) => string
+  menu: string
+}
+
+const extraCopy: Record<Language, ExtraCopy> = {
+  ru: {
+    cta: 'Заявка',
+    formOpening: 'Открываем WhatsApp — останется нажать «Отправить» в чате.',
+    formIncomplete: 'Заполните имя и сообщение.',
+    formEmailInvalid: 'Проверьте email — похоже, в адресе опечатка.',
+    formPhoneInvalid: 'Проверьте номер: +996 и 9 цифр или +7 и 10 цифр.',
+    formLead: 'Заявка с сайта OimoSoft',
+    heroSub:
+      'Создаём решения вместе — цифровые продукты, которые работают стабильно, запускаются вовремя и усиливают ваш бизнес.',
+    contacts: 'Контакты',
+    heroLead:
+      `${orderedStudioProjects.length} приложений в App Store и Google Play. Мобильная разработка, веб, игры и B2B-платформы — одной командой из 11 человек.`,
+    heroCtaProjects: 'Смотреть проекты ↓',
+    tickerLabel: 'Проекты, которые мы реализовали',
+    tickerNote: 'От медицины и страхования до e-commerce и образования.',
+    figuresLabel: 'Цифры<br />и опыт',
+    statApps: 'приложений в App Store и Google Play',
+    servicesHeading: 'Что мы делаем',
+    viewAll: 'Посмотреть все →',
+    allProjectsTitle: 'Все проекты',
+    backHome: '← На главную',
+    shownOf: (shown, total) => `Показано ${shown} из ${total}`,
+    menu: 'Меню'
+  },
+  ky: {
+    cta: 'Билдирме',
+    formOpening: 'WhatsApp ачылып жатат — чатта «Жөнөтүү» баскычын басыңыз.',
+    formIncomplete: 'Атыңызды жана билдирүүнү толтуруңуз.',
+    formEmailInvalid: 'Email’ди текшериңиз — дарек туура эмес окшойт.',
+    formPhoneInvalid: 'Номерди текшериңиз: +996 жана 9 сан, же +7 жана 10 сан.',
+    formLead: 'OimoSoft сайтынан билдирме',
+    heroSub:
+      'Чечимдерди бирге жаратабыз — туруктуу иштеген, өз убагында чыккан жана бизнесиңизди күчөткөн санарип продукттар.',
+    contacts: 'Байланыш',
+    heroLead:
+      `App Store жана Google Play’де ${orderedStudioProjects.length} тиркеме. Мобилдик иштеп чыгуу, веб, оюндар жана B2B-платформалар — 11 кишиден турган бир команда менен.`,
+    heroCtaProjects: 'Долбоорлорду көрүү ↓',
+    tickerLabel: 'Биз ишке ашырган долбоорлор',
+    tickerNote: 'Медицинадан жана камсыздандыруудан e-commerce жана билим берүүгө чейин.',
+    figuresLabel: 'Сандар<br />жана тажрыйба',
+    statApps: 'App Store жана Google Play’деги тиркеме',
+    servicesHeading: 'Биз эмне кылабыз',
+    viewAll: 'Баарын көрүү →',
+    allProjectsTitle: 'Бардык долбоорлор',
+    backHome: '← Башкы бетке',
+    shownOf: (shown, total) => `${total} долбоордун ${shown} көрсөтүлдү`,
+    menu: 'Меню'
+  },
+  en: {
+    cta: 'Request',
+    formOpening: 'Opening WhatsApp — just hit send in the chat.',
+    formIncomplete: 'Please fill in your name and message.',
+    formEmailInvalid: 'Check the email — the address looks incorrect.',
+    formPhoneInvalid: 'Check the number: +996 plus 9 digits, or +7 plus 10 digits.',
+    formLead: 'Request from the OimoSoft website',
+    heroSub:
+      'Building solutions together — digital products that run reliably, launch on time, and strengthen your business.',
+    contacts: 'Contacts',
+    heroLead:
+      `${orderedStudioProjects.length} apps on the App Store and Google Play. Mobile, web, games, and B2B platforms — delivered by one team of 11.`,
+    heroCtaProjects: 'View projects ↓',
+    tickerLabel: 'Projects we have delivered',
+    tickerNote: 'From healthcare and insurance to e-commerce and education.',
+    figuresLabel: 'Numbers<br />and experience',
+    statApps: 'apps on the App Store and Google Play',
+    servicesHeading: 'What we do',
+    viewAll: 'View all →',
+    allProjectsTitle: 'All projects',
+    backHome: '← Back home',
+    shownOf: (shown, total) => `Showing ${shown} of ${total}`,
+    menu: 'Menu'
+  }
+}
+
+const copy = uiCopy[currentLanguage]
+const extra = extraCopy[currentLanguage]
+
 const getProjectInitials = (title: string) => {
   const words = title.replace(/[^\p{L}\p{N}\s]/gu, '').split(' ').filter(Boolean)
   if (words.length === 0) return title.slice(0, 2).toUpperCase()
@@ -981,874 +1029,482 @@ const getProjectInitials = (title: string) => {
   return `${words[0][0]}${words[1][0]}`.toUpperCase()
 }
 
-const getProjectColor = (id: string) => {
-  let hash = 0
-  for (let i = 0; i < id.length; i += 1) {
-    hash = (hash << 5) - hash + id.charCodeAt(i)
-    hash |= 0
-  }
-  const hue = Math.abs(hash) % 360
-  return `hsl(${hue} 70% 55%)`
-}
+const HOME_PROJECTS_COUNT = 6
 
 const languageItems = [
-  ['ky', 'KG', '🇰🇬'],
-  ['ru', 'RU', '🇷🇺'],
-  ['en', 'EN', '🇺🇸']
+  ['ru', 'RU'],
+  ['ky', 'KG'],
+  ['en', 'EN']
 ] as const
 
 const renderLanguageSwitcher = () => `
-  <div class="lang-switcher" aria-label="${uiCopy[currentLanguage].langAria}">
-    <button class="lang-current" type="button" data-lang-toggle aria-expanded="false">
-      <span class="lang-current-value">
-        <span class="lang-flag" aria-hidden="true">${languageItems.find(([lang]) => lang === currentLanguage)?.[2] ?? '🇷🇺'}</span>
-        <span>${languageItems.find(([lang]) => lang === currentLanguage)?.[1] ?? 'RU'}</span>
-      </span>
-      <span class="lang-arrow" aria-hidden="true">▾</span>
-    </button>
-    <div class="lang-menu" role="menu">
-      ${languageItems
-    .filter(([lang]) => lang !== currentLanguage)
-    .map(
-      ([lang, label, flag]) => `
-            <button class="lang-btn" type="button" data-lang="${lang}" role="menuitem">
-              <span class="lang-flag" aria-hidden="true">${flag}</span>
-              <span>${label}</span>
-            </button>
-          `
-    )
-    .join('')}
-    </div>
+  <div class="lang" role="group" aria-label="${copy.langAria}">
+    ${languageItems
+      .map(
+        ([lang, label]) => `
+      <button
+        type="button"
+        class="lang-btn${lang === currentLanguage ? ' is-active' : ''}"
+        data-lang="${lang}"
+        aria-pressed="${lang === currentLanguage}"
+      >${label}</button>
+    `
+      )
+      .join('')}
   </div>
 `
 
-const renderHeroTitle = (title: string) => {
-  const [brand, ...tail] = title.split('—')
-  const tagline = tail.join('—').trim()
-  return `
-    <span class="hero-title-brand">${brand.trim()}</span>
-    ${tagline ? `<span class="hero-title-tagline">— ${tagline}</span>` : ''}
-  `
-}
-
-const renderPrivacyPolicy = () => {
-  const copy = uiCopy[currentLanguage]
-  return `
-    <section class="page-view privacy-page" data-page="privacy" id="privacy">
-      <section class="privacy-shell">
-        <div class="privacy-card">
-          <a class="button ghost privacy-back" href="#home">${copy.common.back}</a>
-          <div class="privacy-intro">
-            <p class="privacy-kicker">${copy.privacy.kicker}</p>
-            <h1>${copy.privacy.title}</h1>
-            <div class="privacy-meta">
-              <span>${copy.privacy.updated}</span>
-              <span>${copy.privacy.company}</span>
-            </div>
-          </div>
-          ${copy.privacy.sections
-      .map(
-        (section) => `
-                <section class="privacy-section">
-                  <h2>${section.title}</h2>
-                  ${section.paragraphs
-            .map((paragraph) =>
-              paragraph.includes('oimosoft1@gmail.com')
-                ? `<p>${paragraph.replace(
-                  'oimosoft1@gmail.com',
-                  '<a href="mailto:oimosoft1@gmail.com">oimosoft1@gmail.com</a>'
-                )}</p>`
-                : `<p>${paragraph}</p>`
-            )
-            .join('')}
-                </section>
-              `
-      )
-      .join('')}
-        </div>
-      </section>
-    </section>
-  `
-}
+const renderSectionHead = (kicker: string, title: string, subtitle: string) => `
+  <div class="section-head">
+    <div>
+      <p class="kicker">${kicker}</p>
+      <h2>${title}</h2>
+    </div>
+    <p class="section-lead">${subtitle}</p>
+  </div>
+`
 
 const renderStoreLinks = (links: Link[]) => `
   <div class="store-links">
     ${links
-    .map(
-      (link) => `
-      <a class="store-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+      .map(
+        (link) => `
+      <a class="store-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label} ↗</a>
     `
-    )
-    .join('')}
+      )
+      .join('')}
   </div>
 `
 
-const renderProjectCard = (project: StudioProject, order: number) => `
-  <article class="project-card reveal" data-order="${order}">
-    <div class="project-header">
-      <div class="project-title-row">
-        <div
-          class="project-logo"
-          style="--logo:${getProjectColor(project.id)}"
-          data-app-store-id="${project.appStoreId ?? ''}"
-          data-app-store-country="${project.appStoreCountry ?? ''}"
-          data-play-id="${project.playId ?? ''}"
-          data-initials="${getProjectInitials(project.title)}"
-        >
-          <span>${getProjectInitials(project.title)}</span>
-          <img class="project-logo-img" alt="${project.title} logo" loading="lazy" />
-        </div>
-        <h3>${project.title}</h3>
+const renderProjectCard = (project: StudioProject, index: number) => `
+  <article class="cell project-card">
+    <div class="project-media">
+      <div class="project-icon${projectIcons[project.id] ? ' has-image' : ''}">
+        ${
+          projectIcons[project.id]
+            ? `<img src="${projectIcons[project.id]}" alt="${project.title}" loading="lazy" />`
+            : `<span>${getProjectInitials(project.title)}</span>`
+        }
       </div>
-      <p class="project-summary">${getText(project.summary)}</p>
     </div>
+    <div class="project-title">
+      <span class="project-num">${String(index + 1).padStart(2, '0')}</span>
+      <h3>${project.title}</h3>
+    </div>
+    <p class="muted">${getText(project.summary)}</p>
     ${renderStoreLinks(project.links)}
   </article>
 `
 
+const renderServiceCard = (service: ServiceCard) => `
+  <article class="cell service-card">
+    <div class="service-media">
+      <img src="${service.image}" alt="${getText(service.title)}" loading="lazy" />
+    </div>
+    <h3>${getText(service.title)}</h3>
+    <p class="muted">${getText(service.description)}</p>
+  </article>
+`
+
 const renderLeaderCard = (leader: Leader) => `
-  <article class="leader-card reveal" style="--accent: ${leader.accent}; --photo: url('${leader.photo}')">
-    <div class="leader-media" aria-hidden="true"></div>
-    <div class="leader-info">
-      <p class="leader-role">${leader.role}</p>
+  <article class="cell member-card">
+    <div class="member-photo" style="background-image: url('${leader.photo}')" aria-hidden="true"></div>
+    <div class="member-info">
+      <p class="member-role">${leader.role}</p>
       <h3>${leader.name}</h3>
-      <p class="leader-tagline">${getText(leader.tagline)}</p>
+      <p class="muted">${getText(leader.tagline)}</p>
     </div>
   </article>
 `
 
-const copy = uiCopy[currentLanguage]
+const tickerColumn = (titles: string[], direction: 'up' | 'down') => `
+  <div class="ticker-col ticker-${direction}">
+    <div class="ticker-track">
+      ${[...titles, ...titles]
+        .map(
+          (title, index) =>
+            `<span class="ticker-item" data-tone="${index % 3}">${title}</span>`
+        )
+        .join('')}
+    </div>
+  </div>
+`
+
+const renderPrivacy = () => `
+  <div class="privacy-grid">
+    <div class="privacy-aside">
+      <p class="kicker">${copy.privacy.kicker}</p>
+      <h1>${copy.privacy.title}</h1>
+      <div class="privacy-meta">
+        <span>${copy.privacy.updated}</span>
+        <span>${copy.privacy.company}</span>
+      </div>
+      <a class="underline-link" href="#home">${copy.common.back}</a>
+    </div>
+    <div class="privacy-body">
+      ${copy.privacy.sections
+        .map(
+          (section) => `
+        <section>
+          <h2>${section.title}</h2>
+          ${section.paragraphs
+            .map((paragraph) =>
+              paragraph.includes('admin@oimosoft.com')
+                ? `<p>${paragraph.replace(
+                    'admin@oimosoft.com',
+                    '<a href="mailto:admin@oimosoft.com">admin@oimosoft.com</a>'
+                  )}</p>`
+                : `<p>${paragraph}</p>`
+            )
+            .join('')}
+        </section>
+      `
+        )
+        .join('')}
+    </div>
+  </div>
+`
+
+const homeProjects = orderedStudioProjects.slice(0, HOME_PROJECTS_COUNT)
+const tickerTitles = orderedStudioProjects.map((project) => project.title)
 
 app.innerHTML = `
-  <div class="app">
-    <header class="site-header">
+  <div class="shell">
+    <header class="topbar">
       <a class="brand" href="#home">
-        <img class="brand-logo" src="${logoUrl}" alt="Oimosoft" />
-        <div>
-          <span class="brand-name">OimoSoft</span>
-        </div>
+        <img src="${logoUrl}" alt="" />
+        <span>Oimosoft</span>
       </a>
-      <nav class="site-nav" id="site-nav">
-        <a href="#home">${copy.nav.home}</a>
+      <nav class="topnav" id="topnav">
         <a href="#projects">${copy.nav.projects}</a>
         <a href="#services">${copy.nav.services}</a>
-        <a href="#leaders">${copy.nav.team}</a>
+        <a href="#team">${copy.nav.team}</a>
+        <a href="#contact">${extra.contacts}</a>
       </nav>
-      ${renderLanguageSwitcher()}
-      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <a class="button primary" href="#contact">${copy.nav.contact}</a>
+      <div class="topbar-side">
+        ${renderLanguageSwitcher()}
+        <a class="btn-solid" href="#contact">${extra.cta}</a>
+        <button class="burger" type="button" aria-controls="topnav" aria-expanded="false" aria-label="${extra.menu}">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <main>
-      <section class="page-view is-active" data-page="home" id="home">
+      <div class="page is-active" data-page="home" id="home">
         <section class="hero">
-          <canvas id="tech-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-          <div class="hero-inner">
-            <div class="hero-content">
-              <h1>${renderHeroTitle(copy.hero.title)}</h1>
-              <p>
-                ${copy.hero.description}
-              </p>
-              <div class="hero-stats">
-                <div>
-                  <strong>15+</strong>
-                  <span>${copy.hero.stats[0]}</span>
-                </div>
-                <div>
-                  <strong>50+</strong>
-                  <span>${copy.hero.stats[1]}</span>
-                </div>
-                <div>
-                  <strong>5+</strong>
-                  <span>${copy.hero.stats[2]}</span>
-                </div>
-              </div>
+          <div class="hero-main">
+            <div>
+              <h1 class="hero-title">OIMOSOFT</h1>
+              <h2 class="hero-sub">${extra.heroSub}</h2>
             </div>
-            <div class="hero-visual">
-              <div class="macbook-stack">
-                <div class="hero-video">
-                  <img src="${imgProgrammingbro}" alt="Programming illustration" />
-                </div>
-                <div class="macbook-glow" aria-hidden="true"></div>
-              </div>
+            <div class="hero-foot">
+              <p class="hero-lead">${extra.heroLead}</p>
+              <a class="underline-link" href="#projects">${extra.heroCtaProjects}</a>
             </div>
+          </div>
+          <div class="hero-side">
+            <p class="kicker">${extra.tickerLabel}</p>
+            <div class="ticker">
+              ${tickerColumn(tickerTitles.filter((_, index) => index % 2 === 0), 'up')}
+              ${tickerColumn(tickerTitles.filter((_, index) => index % 2 === 1), 'down')}
+              <div class="ticker-fade" aria-hidden="true"></div>
+            </div>
+            <p class="muted small">${extra.tickerNote}</p>
           </div>
         </section>
 
-        <section class="section" id="projects">
-          <div class="section-head">
-            <div class="section-head-content">
-              <h2>${copy.sections.projects.title}</h2>
-              <p>${copy.sections.projects.subtitle}</p>
-            </div>
-            <div class="section-actions" data-scroll-target="projects-row">
-              <button class="scroll-btn" type="button" data-scroll="left" aria-label="${copy.common.scrollLeft}">
-                ←
-              </button>
-              <button class="scroll-btn" type="button" data-scroll="right" aria-label="${copy.common.scrollRight}">
-                →
-              </button>
-            </div>
+        <section class="stats">
+          <div class="stat-label">${extra.figuresLabel}</div>
+          <div class="stat">
+            <div class="stat-value">${orderedStudioProjects.length}<span>+</span></div>
+            <p>${extra.statApps}</p>
           </div>
-          <div class="portfolio-row" id="projects-row">
-            ${orderedStudioProjects.map((project, index) => renderProjectCard(project, index)).join('')}
+          <div class="stat">
+            <div class="stat-value">50<span>+</span></div>
+            <p>${copy.hero.stats[1]}</p>
+          </div>
+          <div class="stat">
+            <div class="stat-value">5<span>+</span></div>
+            <p>${copy.hero.stats[2]}</p>
           </div>
         </section>
 
-        <section class="section" id="services">
-          <div class="section-head">
-            <div class="section-head-content">
-              <h2>${copy.sections.services.title}</h2>
-              <p>${copy.sections.services.subtitle}</p>
-            </div>
-            <div class="section-actions" data-scroll-target="services-row">
-              <button class="scroll-btn" type="button" data-scroll="left" aria-label="${copy.common.scrollLeft}">
-                ←
-              </button>
-              <button class="scroll-btn" type="button" data-scroll="right" aria-label="${copy.common.scrollRight}">
-                →
-              </button>
-            </div>
-          </div>
-          <div class="service-row" id="services-row">
-            ${serviceCards
-    .map(
-      (item) => `
-              <article class="service-card reveal">
-                <div class="service-image">
-                  <img src="${item.image}" alt="${getText(item.title)}" loading="lazy" />
-                </div>
-                <h3>${getText(item.title)}</h3>
-                <p>${getText(item.description)}</p>
-              </article>
-            `
-    )
-    .join('')}
+        <section class="band" id="services">
+          ${renderSectionHead(`01 — ${copy.sections.services.title}`, extra.servicesHeading, copy.sections.services.subtitle)}
+          <div class="grid grid-3">
+            ${serviceCards.map((service) => renderServiceCard(service)).join('')}
           </div>
         </section>
 
-        <section class="section" id="leaders">
-          <div class="section-head">
-            <div class="section-head-content">
-              <h2>${copy.sections.leaders.title}</h2>
-              <p>${copy.sections.leaders.subtitle}</p>
-            </div>
-            <div class="section-actions" data-scroll-target="leaders-row">
-              <button class="scroll-btn" type="button" data-scroll="left" aria-label="${copy.common.scrollLeft}">
-                ←
-              </button>
-              <button class="scroll-btn" type="button" data-scroll="right" aria-label="${copy.common.scrollRight}">
-                →
-              </button>
-            </div>
+        <section class="band" id="projects">
+          ${renderSectionHead(`02 — ${copy.sections.projects.title}`, copy.sections.projects.title, copy.sections.projects.subtitle)}
+          <div class="grid grid-3">
+            ${homeProjects.map((project, index) => renderProjectCard(project, index)).join('')}
           </div>
-          <div class="leaders-row" id="leaders-row">
+          <div class="band-foot">
+            <span class="kicker">${extra.shownOf(homeProjects.length, orderedStudioProjects.length)}</span>
+            <a class="btn-outline" href="#all-projects">${extra.viewAll}</a>
+          </div>
+        </section>
+
+        <section class="band" id="team">
+          ${renderSectionHead(`03 — ${copy.sections.leaders.title}`, copy.sections.leaders.title, copy.sections.leaders.subtitle)}
+          <div class="grid ${leaders.length <= 3 ? 'grid-3' : 'grid-4'}">
             ${leaders.map((leader) => renderLeaderCard(leader)).join('')}
           </div>
         </section>
 
-      </section>
+        <section class="contact" id="contact">
+          <div class="contact-aside">
+            <div>
+              <p class="kicker">04 — ${extra.contacts}</p>
+              <h2>${copy.footer.title}</h2>
+              <p class="muted">${copy.footer.description}</p>
+            </div>
+            <div class="contact-links">
+              <a href="mailto:admin@oimosoft.com">admin@oimosoft.com</a>
+              <a href="https://wa.me/996507158857" target="_blank" rel="noreferrer">+996 507 158 857</a>
+            </div>
+          </div>
+          <div class="contact-form-wrap">
+            <form class="contact-form" novalidate>
+              <label>
+                <span>${copy.footer.form.name}</span>
+                <input type="text" name="name" placeholder="${copy.footer.form.placeholders.name}" required />
+              </label>
+              <label>
+                <span>${copy.footer.form.email}</span>
+                <input type="email" name="email" inputmode="email" autocomplete="email" spellcheck="false" placeholder="${copy.footer.form.placeholders.email}" />
+              </label>
+              <label class="full">
+                <span>${copy.footer.form.phone}</span>
+                <input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="${copy.footer.form.placeholders.phone}" />
+              </label>
+              <label class="full">
+                <span>${copy.footer.form.message}</span>
+                <textarea name="message" rows="4" placeholder="${copy.footer.form.placeholders.message}" required></textarea>
+              </label>
+              <div class="form-foot full">
+                <button class="btn-solid" type="submit">${copy.footer.form.submit}</button>
+                <span class="form-status" data-form-status aria-live="polite"></span>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
 
-      ${renderPrivacyPolicy()}
+      <div class="page" data-page="all-projects" id="all-projects">
+        <div class="band">
+          <div class="section-head all-projects-head">
+            <p class="kicker">02 — ${copy.sections.projects.title}</p>
+            <div class="all-projects-title">
+              <div>
+                <h1>${extra.allProjectsTitle}</h1>
+                <p class="section-lead">${copy.sections.projects.subtitle}</p>
+              </div>
+              <a class="underline-link" href="#home">${extra.backHome}</a>
+            </div>
+          </div>
+          <div class="grid grid-3">
+            ${orderedStudioProjects.map((project, index) => renderProjectCard(project, index)).join('')}
+          </div>
+        </div>
+      </div>
 
+      <div class="page" data-page="privacy" id="privacy">
+        ${renderPrivacy()}
+      </div>
     </main>
 
-    <footer class="footer" id="contact">
-      <div class="footer-contact">
-        <div>
-          <h2>${copy.footer.title}</h2>
-          <p>${copy.footer.description}</p>
-        </div>
-        <form
-          class="contact-form"
-          novalidate
-        >
-          <label>
-            ${copy.footer.form.name}
-            <input type="text" name="name" placeholder="${copy.footer.form.placeholders.name}" required />
-          </label>
-          <label>
-            ${copy.footer.form.email}
-            <input type="email" name="email" placeholder="${copy.footer.form.placeholders.email}" required />
-          </label>
-          <label>
-            ${copy.footer.form.phone}
-            <input type="tel" name="phone" placeholder="${copy.footer.form.placeholders.phone}" />
-          </label>
-          <label class="full">
-            ${copy.footer.form.message}
-            <textarea name="message" rows="4" placeholder="${copy.footer.form.placeholders.message}" required></textarea>
-          </label>
-          <button class="button primary" type="submit">${copy.footer.form.submit}</button>
-          <p class="form-status full" data-form-status aria-live="polite"></p>
-        </form>
-      </div>
-      <div class="footer-main">
-        <div>© ${new Date().getFullYear()} OimoSoft. ${copy.footer.rights}</div>
-        <div class="footer-side">
-          <div class="footer-links">
-            <a class="footer-policy-link" href="#privacy">${copy.footer.privacy}</a>
-          </div>
-          <div class="footer-social">
-            <a class="icon-button" href="https://wa.me/996500040111" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a8 8 0 0 0-6.9 12.1L4 20l4-1.1A8 8 0 1 0 12 4Zm0 1.8a6.2 6.2 0 0 1 0 12.4 6.1 6.1 0 0 1-3.1-.8l-.2-.1-2.2.6.6-2.1-.1-.2A6.2 6.2 0 0 1 12 5.8Zm3.6 8.8c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.1-.5.1-.1.2-.6.7-.7.8-.1.1-.3.1-.5 0-.2-.1-.9-.3-1.7-1.1-.6-.6-1-1.3-1.1-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.1 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.3-.5-.3h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.3.1.1 1.6 2.4 3.9 3.3.5.2.9.3 1.2.4.5.1.9.1 1.2.1.4 0 1.2-.5 1.4-1 .2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/></svg>
-            </a>
-            <a class="icon-button" href="https://www.instagram.com/oimo_soft?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3h-9A4.5 4.5 0 0 0 3 7.5v9A4.5 4.5 0 0 0 7.5 21h9a4.5 4.5 0 0 0 4.5-4.5v-9A4.5 4.5 0 0 0 16.5 3Zm2.7 13.5a2.7 2.7 0 0 1-2.7 2.7h-9a2.7 2.7 0 0 1-2.7-2.7v-9a2.7 2.7 0 0 1 2.7-2.7h9a2.7 2.7 0 0 1 2.7 2.7v9Zm-7.2-7a4.2 4.2 0 1 0 0 8.4 4.2 4.2 0 0 0 0-8.4Zm0 6.6a2.4 2.4 0 1 1 0-4.8 2.4 2.4 0 0 1 0 4.8Zm5.4-7.2a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>
-            </a>
-            <a class="icon-button" href="tg://resolve?phone=996500040111" aria-label="Telegram">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 4.3c.4-.2.8.2.7.6l-3 14.2c-.1.5-.7.7-1.1.4l-4-3-2.1 2a.6.6 0 0 1-1-.3l-.6-4.8 9.6-8.6c.2-.2 0-.4-.2-.3L6.8 11.8l-3.9-1.2c-.5-.2-.6-.8-.1-1l18-5.3Z"/></svg>
-            </a>
-            <a class="icon-button" href="https://github.com/OIMOSOFT" target="_blank" rel="noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-2.8 17.6c.4.1.6-.2.6-.5v-2c-2.4.5-3-1-3-1-.4-.9-1-1.1-1-1.1-.8-.5.1-.5.1-.5.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.6.3-1 .6-1.3-2-.2-4.1-1-4.1-4.6 0-1 .4-1.8 1-2.4-.1-.2-.4-1.1.1-2.3 0 0 .8-.2 2.5 1a8.7 8.7 0 0 1 4.6 0c1.7-1.2 2.5-1 2.5-1 .5 1.2.2 2.1.1 2.3.6.6 1 1.4 1 2.4 0 3.6-2.2 4.4-4.2 4.6.3.3.6.8.6 1.7v2.5c0 .3.2.6.6.5A9 9 0 0 0 12 3Z"/></svg>
-            </a>
-            <a class="icon-button" href="mailto:oimosoft1@gmail.com" aria-label="Gmail">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.8v10.7c0 .8.6 1.5 1.4 1.5h13.2c.8 0 1.4-.7 1.4-1.5V6.8l-8 5.1-8-5.1Zm8 3.9 8-5.2c-.2-.3-.6-.4-1-.4H5c-.4 0-.8.1-1 .4l8 5.2Z"/></svg>
-            </a>
-          </div>
+    <footer class="sitefoot">
+      <div>© ${new Date().getFullYear()} OimoSoft. ${copy.footer.rights}</div>
+      <div class="sitefoot-side">
+        <a class="underline-link small" href="#privacy">${copy.footer.privacy}</a>
+        <div class="socials">
+          <a href="https://wa.me/996507158857" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a8 8 0 0 0-6.9 12.1L4 20l4-1.1A8 8 0 1 0 12 4Zm0 1.8a6.2 6.2 0 0 1 0 12.4 6.1 6.1 0 0 1-3.1-.8l-.2-.1-2.2.6.6-2.1-.1-.2A6.2 6.2 0 0 1 12 5.8Zm3.6 8.8c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.1-.5.1-.1.2-.6.7-.7.8-.1.1-.3.1-.5 0-.2-.1-.9-.3-1.7-1.1-.6-.6-1-1.3-1.1-1.5-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3.2-.4 0-.1 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.3-.5-.3h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.3.1.1 1.6 2.4 3.9 3.3.5.2.9.3 1.2.4.5.1.9.1 1.2.1.4 0 1.2-.5 1.4-1 .2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/oimo_soft" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3h-9A4.5 4.5 0 0 0 3 7.5v9A4.5 4.5 0 0 0 7.5 21h9a4.5 4.5 0 0 0 4.5-4.5v-9A4.5 4.5 0 0 0 16.5 3Zm2.7 13.5a2.7 2.7 0 0 1-2.7 2.7h-9a2.7 2.7 0 0 1-2.7-2.7v-9a2.7 2.7 0 0 1 2.7-2.7h9a2.7 2.7 0 0 1 2.7 2.7v9Zm-7.2-7a4.2 4.2 0 1 0 0 8.4 4.2 4.2 0 0 0 0-8.4Zm0 6.6a2.4 2.4 0 1 1 0-4.8 2.4 2.4 0 0 1 0 4.8Zm5.4-7.2a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>
+          </a>
+          <a href="https://t.me/mustafanabiev" target="_blank" rel="noreferrer" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 4.3c.4-.2.8.2.7.6l-3 14.2c-.1.5-.7.7-1.1.4l-4-3-2.1 2a.6.6 0 0 1-1-.3l-.6-4.8 9.6-8.6c.2-.2 0-.4-.2-.3L6.8 11.8l-3.9-1.2c-.5-.2-.6-.8-.1-1l18-5.3Z"/></svg>
+          </a>
+          <a href="mailto:admin@oimosoft.com" aria-label="Gmail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.8v10.7c0 .8.6 1.5 1.4 1.5h13.2c.8 0 1.4-.7 1.4-1.5V6.8l-8 5.1-8-5.1Zm8 3.9 8-5.2c-.2-.3-.6-.4-1-.4H5c-.4 0-.8.1-1 .4l8 5.2Z"/></svg>
+          </a>
         </div>
       </div>
     </footer>
   </div>
 `
 
-const appShell = document.querySelector<HTMLElement>('.app')
+const topbar = document.querySelector<HTMLElement>('.topbar')
 
-
-const projectIconCache = new Map<string, string>()
-
-const buildAppStoreLookupUrls = (id: string, country?: string) => {
-  const urls: string[] = []
-  if (country) {
-    urls.push(`https://itunes.apple.com/lookup?id=${id}&country=${country}`)
-  }
-  urls.push(`https://itunes.apple.com/lookup?id=${id}&country=us`)
-  urls.push(`https://itunes.apple.com/lookup?id=${id}`)
-  return urls
+const closeMenu = () => {
+  topbar?.classList.remove('menu-open')
+  topbar?.querySelector<HTMLButtonElement>('.burger')?.setAttribute('aria-expanded', 'false')
 }
-
-const fetchAppStoreIcon = async (id: string, country?: string) => {
-  const cacheKey = `app:${id}:${country ?? 'default'}`
-  if (projectIconCache.has(cacheKey)) {
-    return projectIconCache.get(cacheKey) ?? null
-  }
-  const urls = buildAppStoreLookupUrls(id, country)
-  for (const url of urls) {
-    try {
-      const response = await fetch(url)
-      if (!response.ok) continue
-      const data = (await response.json()) as {
-        results?: Array<{ artworkUrl512?: string; artworkUrl100?: string }>
-      }
-      let iconUrl = data.results?.[0]?.artworkUrl512 ?? data.results?.[0]?.artworkUrl100 ?? null
-      if (iconUrl && iconUrl.startsWith('http://')) {
-        iconUrl = iconUrl.replace('http://', 'https://')
-      }
-      if (iconUrl) {
-        projectIconCache.set(cacheKey, iconUrl)
-        return iconUrl
-      }
-    } catch {
-      continue
-    }
-  }
-  return null
-}
-
-const extractPlayIcon = (text: string) => {
-  const match = text.match(/https:\/\/play-lh\.googleusercontent\.com\/[^\s"']+/)
-  if (!match) return null
-  let iconUrl = match[0]
-  const sizeIndex = iconUrl.indexOf('=w')
-  if (sizeIndex !== -1) {
-    iconUrl = `${iconUrl.slice(0, sizeIndex)}=w256-h256`
-  } else {
-    iconUrl = `${iconUrl}=w256-h256`
-  }
-  return iconUrl
-}
-
-const fetchPlayIcon = async (id: string) => {
-  const cacheKey = `play:${id}`
-  if (projectIconCache.has(cacheKey)) {
-    return projectIconCache.get(cacheKey) ?? null
-  }
-  const sources = [
-    `https://r.jina.ai/http://https://play.google.com/store/apps/details?id=${id}`,
-    `https://r.jina.ai/http://play.google.com/store/apps/details?id=${id}`
-  ]
-  for (const source of sources) {
-    try {
-      const response = await fetch(source)
-      if (!response.ok) continue
-      const text = await response.text()
-      const iconUrl = extractPlayIcon(text)
-      if (iconUrl) {
-        projectIconCache.set(cacheKey, iconUrl)
-        return iconUrl
-      }
-    } catch {
-      continue
-    }
-  }
-  return null
-}
-
-const reorderProjectCards = () => {
-  const row = document.querySelector<HTMLElement>('.portfolio-row')
-  if (!row) return
-  const cards = Array.from(row.querySelectorAll<HTMLElement>('.project-card'))
-  if (cards.length === 0) return
-  cards.sort((a, b) => {
-    const aOrder = Number(a.dataset.order ?? 0)
-    const bOrder = Number(b.dataset.order ?? 0)
-    return aOrder - bOrder
-  })
-  cards.forEach((card) => row.appendChild(card))
-}
-
-const loadProjectLogos = () => {
-  const containers = document.querySelectorAll<HTMLElement>('.project-logo')
-  if (containers.length === 0) return
-  let remaining = containers.length
-  const done = () => {
-    remaining -= 1
-    if (remaining <= 0) reorderProjectCards()
-  }
-
-  containers.forEach((container) => {
-    const img = container.querySelector<HTMLImageElement>('img')
-    if (!img) {
-      done()
-      return
-    }
-    const appStoreId = container.dataset.appStoreId?.trim()
-    const appStoreCountry = container.dataset.appStoreCountry?.trim()
-    const playId = container.dataset.playId?.trim()
-    const load = async () => {
-      let iconUrl: string | null = null
-      if (appStoreId) {
-        iconUrl = await fetchAppStoreIcon(appStoreId, appStoreCountry)
-      }
-      if (!iconUrl && playId) {
-        iconUrl = await fetchPlayIcon(playId)
-      }
-      if (!iconUrl) {
-        img.remove()
-        done()
-        return
-      }
-      img.src = iconUrl
-      img.addEventListener(
-        'load',
-        () => {
-          container.classList.add('has-image')
-          done()
-        },
-        { once: true }
-      )
-      img.addEventListener(
-        'error',
-        () => {
-          img.remove()
-          done()
-        },
-        { once: true }
-      )
-    }
-    void load()
-  })
-}
-
-loadProjectLogos()
-
-const initTechCanvas = () => {
-  const hero = document.querySelector<HTMLElement>('.hero')
-  const canvas = document.querySelector<HTMLCanvasElement>('#tech-canvas')
-  if (!hero || !canvas) return
-  const ctx = canvas.getContext('2d')
-  if (!ctx) return
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  const shouldAnimate = !prefersReducedMotion
-  const maxDpr = 2
-  let width = 0
-  let height = 0
-  let dpr = Math.min(window.devicePixelRatio || 1, maxDpr)
-
-  type Node = {
-    x: number
-    y: number
-    vx: number
-    vy: number
-    radius: number
-  }
-
-  let nodes: Node[] = []
-  const mouse = { x: 0, y: 0, active: false }
-
-  const resize = () => {
-    width = hero.clientWidth
-    height = hero.clientHeight
-    dpr = Math.min(window.devicePixelRatio || 1, maxDpr)
-    canvas.width = Math.floor(width * dpr)
-    canvas.height = Math.floor(height * dpr)
-    canvas.style.width = `${width}px`
-    canvas.style.height = `${height}px`
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-
-    const targetCount = Math.max(26, Math.floor((width * height) / 15000))
-    nodes = Array.from({ length: targetCount }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      radius: 1.6 + Math.random() * 1.8
-    }))
-  }
-
-  const updateMouse = (event: PointerEvent) => {
-    const rect = hero.getBoundingClientRect()
-    mouse.x = event.clientX - rect.left
-    mouse.y = event.clientY - rect.top
-    mouse.active = true
-  }
-
-  const resetMouse = () => {
-    mouse.active = false
-  }
-
-  hero.addEventListener('pointermove', updateMouse)
-  hero.addEventListener('pointerleave', resetMouse)
-
-  const getVirtualMouse = (time: number) => {
-    if (mouse.active) return mouse
-    return {
-      x: width / 2 + Math.cos(time / 1600) * width * 0.18,
-      y: height / 2 + Math.sin(time / 1400) * height * 0.18
-    }
-  }
-
-  const draw = (time: number) => {
-    ctx.clearRect(0, 0, width, height)
-    const virtualMouse = getVirtualMouse(time)
-
-    const normX = (virtualMouse.x / width - 0.5) * 2
-    const normY = (virtualMouse.y / height - 0.5) * 2
-    hero.style.setProperty('--mx', normX.toFixed(3))
-    hero.style.setProperty('--my', normY.toFixed(3))
-
-    const maxDist = 140
-    for (let i = 0; i < nodes.length; i += 1) {
-      const node = nodes[i]
-      const dxm = virtualMouse.x - node.x
-      const dym = virtualMouse.y - node.y
-      const distMouse = Math.hypot(dxm, dym)
-
-      if (shouldAnimate) {
-        const attraction = distMouse < 180 ? 0.012 : 0.002
-        if (distMouse > 0) {
-          node.vx += (dxm / distMouse) * attraction
-          node.vy += (dym / distMouse) * attraction
-        }
-
-        node.x += node.vx
-        node.y += node.vy
-        node.vx *= 0.96
-        node.vy *= 0.96
-
-        const margin = 80
-        if (node.x < -margin) {
-          node.x = width + margin
-          node.y = Math.random() * height
-        }
-        if (node.x > width + margin) {
-          node.x = -margin
-          node.y = Math.random() * height
-        }
-        if (node.y < -margin) {
-          node.y = height + margin
-          node.x = Math.random() * width
-        }
-        if (node.y > height + margin) {
-          node.y = -margin
-          node.x = Math.random() * width
-        }
-      }
-
-      for (let j = i + 1; j < nodes.length; j += 1) {
-        const other = nodes[j]
-        const dx = other.x - node.x
-        const dy = other.y - node.y
-        const dist = Math.hypot(dx, dy)
-        if (dist < maxDist) {
-          const alpha = (1 - dist / maxDist) * 0.35
-          ctx.strokeStyle = `rgba(34, 197, 94, ${alpha})`
-          ctx.lineWidth = 1
-          ctx.beginPath()
-          ctx.moveTo(node.x, node.y)
-          ctx.lineTo(other.x, other.y)
-          ctx.stroke()
-        }
-      }
-
-      const highlight = distMouse < 120
-      ctx.fillStyle = highlight ? 'rgba(34, 197, 94, 0.9)' : 'rgba(15, 23, 42, 0.35)'
-      ctx.beginPath()
-      ctx.arc(node.x, node.y, node.radius + (highlight ? 0.7 : 0), 0, Math.PI * 2)
-      ctx.fill()
-    }
-
-    if (shouldAnimate) {
-      requestAnimationFrame(draw)
-    }
-  }
-
-  resize()
-  window.addEventListener('resize', resize)
-
-  if (shouldAnimate) {
-    requestAnimationFrame(draw)
-  } else {
-    draw(0)
-  }
-}
-
-initTechCanvas()
-
 
 const setRoute = () => {
   const hash = window.location.hash.replace('#', '')
-  const activePage = hash === 'privacy' ? 'privacy' : 'home'
+  const activePage = hash === 'privacy' ? 'privacy' : hash === 'all-projects' ? 'all-projects' : 'home'
 
-  appShell?.classList.toggle('privacy-mode', activePage === 'privacy')
-
-  const pages = document.querySelectorAll<HTMLElement>('.page-view')
-  pages.forEach((page) => {
+  document.querySelectorAll<HTMLElement>('.page').forEach((page) => {
     page.classList.toggle('is-active', page.dataset.page === activePage)
   })
 
-  if (hash === 'privacy') {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  } else if (hash && hash !== 'home') {
-    const section = document.getElementById(hash)
-    section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  closeMenu()
+
+  if (activePage !== 'home') {
+    window.scrollTo({ top: 0 })
+    requestAnimationFrame(() => window.scrollTo({ top: 0 }))
+    return
+  }
+
+  if (hash && hash !== 'home') {
+    document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   } else {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-  observeReveal()
-}
-
-const observeReveal = () => {
-  const activePage = document.querySelector<HTMLElement>('.page-view.is-active')
-  if (!activePage) return
-
-  const items = activePage.querySelectorAll<HTMLElement>('.reveal')
-  if (items.length === 0) return
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible')
-          obs.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.2 }
-  )
-
-  items.forEach((item) => observer.observe(item))
-}
-
-const closeLanguageMenus = () => {
-  document.querySelectorAll<HTMLElement>('.lang-switcher.is-open').forEach((switcher) => {
-    switcher.classList.remove('is-open')
-    switcher.querySelector<HTMLElement>('[data-lang-toggle]')?.setAttribute('aria-expanded', 'false')
-  })
 }
 
 document.addEventListener('click', (event) => {
   const target = event.target as HTMLElement | null
   if (!target) return
 
-  if (target.closest('.store-link')) {
-    return
-  }
-
-  const langToggle = target.closest<HTMLButtonElement>('[data-lang-toggle]')
-  if (langToggle) {
-    const switcher = langToggle.closest<HTMLElement>('.lang-switcher')
-    const shouldOpen = !switcher?.classList.contains('is-open')
-    closeLanguageMenus()
-    if (switcher && shouldOpen) {
-      switcher.classList.add('is-open')
-      langToggle.setAttribute('aria-expanded', 'true')
-    }
-    return
-  }
-
   const langButton = target.closest<HTMLButtonElement>('.lang-btn')
   if (langButton) {
-    const nextLanguage = langButton.dataset.lang
-    if (isLanguage(nextLanguage ?? null) && nextLanguage !== currentLanguage) {
-      const selectedLanguage = nextLanguage as Language
-      localStorage.setItem('oimosoft-language', selectedLanguage)
+    const nextLanguage = langButton.dataset.lang ?? null
+    if (isLanguage(nextLanguage) && nextLanguage !== currentLanguage) {
+      localStorage.setItem('oimosoft-language', nextLanguage)
       sessionStorage.setItem('oimosoft-keep-hash', '1')
       window.location.reload()
     }
     return
   }
 
-  const scrollBtn = target.closest<HTMLButtonElement>('.scroll-btn')
-  if (scrollBtn) {
-    const direction = scrollBtn.dataset.scroll === 'left' ? -1 : 1
-    const container = scrollBtn.closest<HTMLElement>('[data-scroll-target]')
-    const targetId = container?.dataset.scrollTarget
-    const scroller = targetId ? document.getElementById(targetId) : null
-    if (scroller) {
-      scroller.scrollBy({
-        left: direction * scroller.clientWidth * 0.9,
-        behavior: 'smooth'
-      })
-    }
+  const burger = target.closest<HTMLButtonElement>('.burger')
+  if (burger) {
+    const isOpen = topbar?.classList.toggle('menu-open') ?? false
+    burger.setAttribute('aria-expanded', String(isOpen))
+    return
+  }
+
+  if (target.closest('.topnav a') || (topbar && !topbar.contains(target))) {
+    closeMenu()
   }
 })
 
-const siteHeader = document.querySelector<HTMLElement>('.site-header')
-const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle')
-const siteNav = document.querySelector<HTMLElement>('.site-nav')
+const PHONE_PLANS = [
+  { code: '996', groups: [3, 2, 2, 2] },
+  { code: '7', groups: [3, 3, 2, 2] }
+] as const
 
-const closeMenu = () => {
-  if (!siteHeader || !menuToggle) return
-  siteHeader.classList.remove('menu-open')
-  siteHeader.classList.remove('is-hidden')
-  menuToggle.setAttribute('aria-expanded', 'false')
+const planFor = (digits: string) => PHONE_PLANS.find((plan) => digits.startsWith(plan.code))
+
+const planLength = (plan: (typeof PHONE_PLANS)[number]) =>
+  plan.code.length + plan.groups.reduce((total, size) => total + size, 0)
+
+const formatPhone = (value: string) => {
+  const digits = value.replace(/\D/g, '')
+  if (!digits) return ''
+
+  const plan = planFor(digits)
+  if (!plan) return `+${digits.slice(0, 15)}`
+
+  const rest = digits.slice(plan.code.length, planLength(plan))
+  const parts: string[] = []
+  let index = 0
+  for (const size of plan.groups) {
+    if (index >= rest.length) break
+    parts.push(rest.slice(index, index + size))
+    index += size
+  }
+
+  return [`+${plan.code}`, ...parts].join(' ')
 }
 
-menuToggle?.addEventListener('click', (event) => {
-  event.stopPropagation()
-  if (!siteHeader || !menuToggle) return
-  const isOpen = siteHeader.classList.toggle('menu-open')
-  siteHeader.classList.remove('is-hidden')
-  menuToggle.setAttribute('aria-expanded', String(isOpen))
-})
+const isPhoneComplete = (value: string) => {
+  const digits = value.replace(/\D/g, '')
+  const plan = planFor(digits)
+  return plan ? digits.length === planLength(plan) : digits.length >= 10
+}
 
-siteNav?.addEventListener('click', (event) => {
-  const target = event.target as HTMLElement | null
-  if (target?.tagName === 'A') {
-    closeMenu()
-  }
-})
-
-document.addEventListener('click', (event) => {
-  const target = event.target as HTMLElement | null
-  if (!target) return
-  if (!target.closest('.lang-switcher')) {
-    closeLanguageMenus()
-  }
-  if (siteHeader && !siteHeader.contains(target)) {
-    closeMenu()
-  }
-})
+const isEmailValid = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)
 
 const contactForm = document.querySelector<HTMLFormElement>('.contact-form')
+const phoneInput = contactForm?.querySelector<HTMLInputElement>('input[name="phone"]')
 
-contactForm?.addEventListener('submit', async (event) => {
+phoneInput?.addEventListener('focus', () => {
+  if (!phoneInput.value) phoneInput.value = '+'
+})
+
+phoneInput?.addEventListener('input', () => {
+  phoneInput.value = formatPhone(phoneInput.value)
+})
+
+phoneInput?.addEventListener('blur', () => {
+  if (phoneInput.value === '+') phoneInput.value = ''
+})
+
+contactForm?.addEventListener('submit', (event) => {
   event.preventDefault()
 
   const statusNode = contactForm.querySelector<HTMLElement>('[data-form-status]')
-  const submitButton = contactForm.querySelector<HTMLButtonElement>('button[type="submit"]')
-  const setStatus = (key: keyof (typeof uiCopy)[Language]['footer']['form']['status'], tone: 'success' | 'error' | 'neutral' = 'neutral') => {
+  const setStatus = (text: string, tone: 'success' | 'error' | 'neutral' = 'neutral') => {
     if (!statusNode) return
-    statusNode.textContent = uiCopy[currentLanguage].footer.form.status[key]
+    statusNode.textContent = text
     statusNode.dataset.tone = tone
-  }
-
-  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-    setStatus('config', 'error')
-    return
   }
 
   const formData = new FormData(contactForm)
   const name = String(formData.get('name') ?? '').trim()
   const email = String(formData.get('email') ?? '').trim()
-  const phone = String(formData.get('phone') ?? '').trim()
+  const phone = formatPhone(String(formData.get('phone') ?? ''))
   const message = String(formData.get('message') ?? '').trim()
 
-  submitButton?.setAttribute('disabled', 'true')
-  setStatus('sending')
-
-  try {
-    const response = await fetch(EMAILJS_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        service_id: EMAILJS_SERVICE_ID,
-        template_id: EMAILJS_TEMPLATE_ID,
-        user_id: EMAILJS_PUBLIC_KEY,
-        template_params: {
-          to_email: 'oimosoft1@gmail.com',
-          from_name: name,
-          from_email: email,
-          reply_to: email,
-          phone,
-          message,
-          subject: `OimoSoft Contact — ${name || 'New request'}`,
-          language: currentLanguage
-        }
-      })
-    })
-
-    if (!response.ok) {
-      throw new Error(`EmailJS request failed with ${response.status}`)
-    }
-
-    contactForm.reset()
-    setStatus('success', 'success')
-  } catch (error) {
-    console.error(error)
-    setStatus('error', 'error')
-  } finally {
-    submitButton?.removeAttribute('disabled')
-  }
-})
-
-let headerRevealTimer: number | undefined
-
-const syncHeaderVisibility = () => {
-  if (!siteHeader) return
-  if (siteHeader.classList.contains('menu-open') || window.scrollY <= 10) {
-    siteHeader.classList.remove('is-hidden')
+  if (!name || !message) {
+    setStatus(extra.formIncomplete, 'error')
     return
   }
 
-  siteHeader.classList.add('is-hidden')
-  if (headerRevealTimer) {
-    window.clearTimeout(headerRevealTimer)
+  if (email && !isEmailValid(email)) {
+    setStatus(extra.formEmailInvalid, 'error')
+    return
   }
-  headerRevealTimer = window.setTimeout(() => {
-    siteHeader?.classList.remove('is-hidden')
-  }, 180)
-}
 
-window.addEventListener('scroll', syncHeaderVisibility, { passive: true })
+  if (phone && !isPhoneComplete(phone)) {
+    setStatus(extra.formPhoneInvalid, 'error')
+    return
+  }
 
+  const labels = copy.footer.form
+  const lines = [
+    extra.formLead,
+    '',
+    `${labels.name}: ${name}`,
+    ...(email ? [`${labels.email}: ${email}`] : []),
+    ...(phone ? [`${labels.phone}: ${phone}`] : []),
+    '',
+    `${labels.message}: ${message}`
+  ]
+
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`
+  window.open(url, '_blank', 'noopener')
+
+  contactForm.reset()
+  setStatus(extra.formOpening, 'success')
+})
 
 window.addEventListener('hashchange', setRoute)
+
 const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined
 const keepHashOnReload = sessionStorage.getItem('oimosoft-keep-hash') === '1'
-if (keepHashOnReload) {
-  sessionStorage.removeItem('oimosoft-keep-hash')
-}
+if (keepHashOnReload) sessionStorage.removeItem('oimosoft-keep-hash')
 if (navEntry?.type === 'reload' && window.location.hash && !keepHashOnReload) {
   history.replaceState(null, '', window.location.pathname + window.location.search)
 }
+
 setRoute()
-syncHeaderVisibility()
