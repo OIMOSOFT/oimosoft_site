@@ -68,7 +68,7 @@ button {
 }
 
 .shell {
-  max-width: 1440px;
+  max-width: 1320px;
   margin: 0 auto;
   border-left: 1px solid var(--line);
   border-right: 1px solid var(--line);
@@ -363,12 +363,24 @@ button {
 }
 
 .ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--display);
   font-size: 20px;
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: rgba(19, 20, 23, 0.85);
+}
+
+.ticker-item img {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 24%;
+  object-fit: cover;
+  border: 1px solid var(--line-soft);
 }
 
 .ticker-up .ticker-item {
@@ -549,6 +561,12 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.service-media.is-contain img {
+  object-fit: contain;
+  padding: 9%;
+  mix-blend-mode: multiply;
 }
 
 /* Projects */

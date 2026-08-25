@@ -8,6 +8,7 @@ import imgBayel from './assets/bayel.jpg'
 import iconAddTest from './assets/app-icons/add-test.png'
 import iconAlltrust from './assets/app-icons/alltrust.png'
 import iconAydaTaxi from './assets/app-icons/ayda-taxi.jpg'
+import iconBelgi from './assets/app-icons/belgi.jpg'
 import iconAyuGarant from './assets/app-icons/ayu-garant.jpg'
 import iconCashbackAlleya from './assets/app-icons/cashback-alleya.jpg'
 import iconDoctorKg from './assets/app-icons/doctor-kg.png'
@@ -25,11 +26,13 @@ import iconStudent from './assets/app-icons/student.png'
 import iconTilbil from './assets/app-icons/tilbil.png'
 import imgMp from './assets/mp.jpeg'
 import imgSait from './assets/sait.jpeg'
-import img2d from './assets/2d.jpeg'
-import imgSystem from './assets/System.jpeg'
-import imgEcommerce from './assets/Ecommerce.jpeg'
-import imgCRM from './assets/CRM.jpeg'
 import imgB2B from './assets/B2B.jpeg'
+import imgCRM from './assets/CRM.jpeg'
+import imgSystem from './assets/System.jpeg'
+import imgServerStatus from './assets/services/server-status.png'
+import imgCreditCard from './assets/services/credit-card.png'
+import imgAppInstall from './assets/services/app-installation.png'
+import imgGiftCard from './assets/services/gift-card.png'
 
 type Language = 'ky' | 'ru' | 'en'
 
@@ -63,6 +66,7 @@ type ServiceCard = {
   title: LocalizedText
   description: LocalizedText
   image: string
+  fit?: 'cover' | 'contain'
 }
 
 const localized = (ru: string, ky: string, en: string): LocalizedText => ({ ru, ky, en })
@@ -83,6 +87,7 @@ const projectIcons: Record<string, string> = {
   'add-test': iconAddTest,
   'alltrust': iconAlltrust,
   'ayda-taxi': iconAydaTaxi,
+  'belgi': iconBelgi,
   'ayu-garant': iconAyuGarant,
   'cashback-alleya': iconCashbackAlleya,
   'doctor-kg': iconDoctorKg,
@@ -112,9 +117,21 @@ const uiCopy = {
       stats: ['крупных проектов', 'малых запусков', 'лет опыта разработки'] as const
     },
     sections: {
-      projects: { title: 'Проекты', subtitle: 'Все проекты с рабочими ссылками на App Store и Google Play.' },
-      services: { title: 'Сервис', subtitle: 'Ключевые направления и компетенции команды.' },
-      leaders: { title: 'Команда', subtitle: 'Ключевая команда, которая ведет проекты от идеи до релиза.' }
+      projects: {
+        title: 'Проекты',
+        subtitle:
+          'Медицина, страхование, финтех, e-commerce, образование и доставка — все проекты со ссылками на сторы.'
+      },
+      services: {
+        title: 'Сервис',
+        subtitle:
+          'Ведем продукт целиком: мобильная и серверная разработка, публикация в сторах и поддержка после релиза.'
+      },
+      leaders: {
+        title: 'Команда',
+        subtitle:
+          'Небольшая команда, которая ведет проект целиком — без подрядчиков и передачи задач на сторону.'
+      }
     },
     footer: {
       title: 'Связаться с нами',
@@ -220,9 +237,21 @@ const uiCopy = {
       stats: ['ири долбоор', 'чакан ишке киргизүү', 'иштеп чыгуу тажрыйбасы'] as const
     },
     sections: {
-      projects: { title: 'Долбоорлор', subtitle: 'Бардык долбоорлордун App Store жана Google Play шилтемелери иштейт.' },
-      services: { title: 'Кызматтар', subtitle: 'Команданын негизги багыттары жана компетенциялары.' },
-      leaders: { title: 'Команда', subtitle: 'Идеядан релизге чейин долбоорду жетектеген негизги команда.' }
+      projects: {
+        title: 'Долбоорлор',
+        subtitle:
+          'Медицина, камсыздандыруу, финтех, e-commerce, билим берүү жана жеткирүү — бардык долбоорлор стор шилтемелери менен.'
+      },
+      services: {
+        title: 'Кызматтар',
+        subtitle:
+          'Продуктту толугу менен алып барабыз: мобилдик жана сервердик иштеп чыгуу, сторлорго жарыялоо жана релизден кийинки колдоо.'
+      },
+      leaders: {
+        title: 'Команда',
+        subtitle:
+          'Долбоорду толугу менен алып барган чакан команда — подрядчиктерсиз жана тапшырманы башкага өткөрбөй.'
+      }
     },
     footer: {
       title: 'Биз менен байланыш',
@@ -328,9 +357,21 @@ const uiCopy = {
       stats: ['large projects', 'smaller launches', 'years of development experience'] as const
     },
     sections: {
-      projects: { title: 'Projects', subtitle: 'All projects with working App Store and Google Play links.' },
-      services: { title: 'Services', subtitle: 'Core directions and competencies of the team.' },
-      leaders: { title: 'Team', subtitle: 'The core team leading projects from idea to release.' }
+      projects: {
+        title: 'Projects',
+        subtitle:
+          'Healthcare, insurance, fintech, e-commerce, education, and delivery — every project with live store links.'
+      },
+      services: {
+        title: 'Services',
+        subtitle:
+          'We run the whole product: mobile and backend development, store publishing, and post-release support.'
+      },
+      leaders: {
+        title: 'Team',
+        subtitle:
+          'A small team that runs the whole project — no subcontractors, no handing work off.'
+      }
     },
     footer: {
       title: 'Contact us',
@@ -520,6 +561,28 @@ const leaders: Leader[] = [
 ]
 
 const studioProjects: StudioProject[] = [
+  {
+    id: 'belgi',
+    title: 'Белги',
+    summary: localized(
+      'Учет рабочего времени: отметка прихода и ухода по QR-коду или геолокации, смены и отпуска.',
+      'Жумуш убактысын эсепке алуу: QR-код же геолокация аркылуу келүү-кетүүнү белгилөө, сменалар жана өргүүлөр.',
+      'Time and attendance: QR-code or geolocation check-in and check-out, shifts, and leave tracking.'
+    ),
+    appStoreId: '6770578918',
+    appStoreCountry: 'kg',
+    playId: 'kg.belgi.app',
+    links: [
+      {
+        label: 'Google Play',
+        url: 'https://play.google.com/store/apps/details?id=kg.belgi.app&hl=ru'
+      },
+      {
+        label: 'App Store',
+        url: 'https://apps.apple.com/kg/app/id6770578918'
+      }
+    ]
+  },
   {
     id: 'ayda-taxi',
     title: 'Ayda Taxi',
@@ -841,7 +904,7 @@ const studioProjects: StudioProject[] = [
   }
 ]
 
-const preferredProjectOrder = ['ayda-taxi', 'sez-us', 'fresh-mag', 'finopolis', 'sika-pro-club']
+const preferredProjectOrder = ['belgi', 'ayda-taxi', 'sez-us', 'fresh-mag', 'finopolis', 'sika-pro-club']
 
 const orderedStudioProjects = [...studioProjects].sort((a, b) => {
   const aPriority = preferredProjectOrder.indexOf(a.id)
@@ -858,65 +921,87 @@ const serviceCards: ServiceCard[] = [
   {
     title: localized('Мобильные приложения', 'Мобилдик тиркемелер', 'Mobile apps'),
     description: localized(
-      'Запускаем нативный опыт на iOS и Android с фокусом на скорость и надежность.',
-      'iOS жана Android үчүн ылдамдыкка жана ишенимдүүлүккө багытталган мобилдик тажрыйба түзөбүз.',
-      'We launch iOS and Android experiences focused on speed and reliability.'
+      'Flutter-приложения для iOS и Android из одной кодовой базы — одинаковый интерфейс и вдвое короче путь до релиза.',
+      'iOS жана Android үчүн бирдиктүү кодго негизделген Flutter тиркемелери — бирдей интерфейс жана релизге кыска жол.',
+      'Flutter apps for iOS and Android from one codebase — the same interface and half the way to release.'
     ),
     image: imgMp
   },
   {
-    title: localized('Сайты и веб‑сервисы', 'Сайттар жана веб‑сервистер', 'Websites and web services'),
+    title: localized('Веб-сервисы и сайты', 'Веб-сервистер жана сайттар', 'Web services and sites'),
     description: localized(
-      'Делаем быстрые веб‑продукты с сильной архитектурой и современным UI.',
-      'Күчтүү архитектурасы жана заманбап интерфейси бар ылдам веб‑продукттарды жасайбыз.',
-      'We build fast web products with strong architecture and modern UI.'
+      'Сайты, порталы и личные кабинеты: быстрые, адаптивные и готовые к росту трафика.',
+      'Сайттар, порталдар жана жеке кабинеттер: ылдам, ыңгайлашкан жана трафиктин өсүшүнө даяр.',
+      'Sites, portals, and user dashboards: fast, responsive, and ready for traffic growth.'
     ),
     image: imgSait
   },
   {
-    title: localized('2D игры', '2D оюндар', '2D games'),
+    title: localized('Backend и API', 'Backend жана API', 'Backend and APIs'),
     description: localized(
-      'Создаем вовлекающие 2D‑проекты: дизайн, механики, аналитика и публикация.',
-      'Дизайн, механика, аналитика жана жарыялоо менен кызыктуу 2D долбоорлорду жасайбыз.',
-      'We create engaging 2D projects with design, mechanics, analytics, and publishing.'
+      'Серверная часть, базы данных и API, которые держат нагрузку и не ломаются при обновлениях.',
+      'Жүктөмдү көтөргөн жана жаңыртууда бузулбаган сервер бөлүгү, маалымат базалары жана API.',
+      'Server side, databases, and APIs that hold up under load and survive every update.'
     ),
-    image: img2d
+    image: imgServerStatus,
+    fit: 'contain'
   },
   {
-    title: localized('Telegram‑боты', 'Telegram‑боттор', 'Telegram bots'),
+    title: localized('E-commerce и маркетплейсы', 'E-commerce жана маркетплейстер', 'E-commerce and marketplaces'),
     description: localized(
-      'Проектируем и запускаем Telegram‑ботов для продаж, поддержки и автоматизации.',
-      'Сатуу, колдоо жана автоматташтыруу үчүн Telegram‑ботторду долбоорлоп ишке киргизебиз.',
-      'We design and launch Telegram bots for sales, support, and automation.'
+      'Магазины, каталоги и B2B-платформы: корзина, оплата, доставка и кабинеты поставщиков.',
+      'Дүкөндөр, каталогдор жана B2B платформалар: себет, төлөм, жеткирүү жана жеткирүүчү кабинеттери.',
+      'Stores, catalogs, and B2B platforms: cart, payment, delivery, and supplier dashboards.'
     ),
-    image: imgSystem
+    image: imgB2B
   },
   {
-    title: localized('E-commerce платформы', 'E-commerce платформалары', 'E-commerce platforms'),
+    title: localized('CRM и админ-панели', 'CRM жана админ-панелдер', 'CRM and admin panels'),
     description: localized(
-      'Запускаем магазины, каталоги, корзину, оплату и доставку в едином удобном продукте.',
-      'Дүкөн, каталог, себет, төлөм жана жеткирүүнү бир ыңгайлуу продуктка бириктиребиз.',
-      'We launch stores, catalogs, carts, payments, and delivery in one cohesive product.'
-    ),
-    image: imgEcommerce
-  },
-  {
-    title: localized('CRM / Admin панели', 'CRM / Admin панелдери', 'CRM / Admin panels'),
-    description: localized(
-      'Делаем внутренние панели управления для заказов, пользователей, контента и аналитики.',
-      'Буйрутмалар, колдонуучулар, контент жана аналитика үчүн ички башкаруу панелдерин жасайбыз.',
-      'We build internal management panels for orders, users, content, and analytics.'
+      'Внутренние системы для заказов, клиентов, контента и отчетов — вместо таблиц и переписок.',
+      'Заказдар, кардарлар, контент жана отчеттор үчүн ички системалар — таблицалардын жана жазышуулардын ордуна.',
+      'Internal systems for orders, clients, content, and reports — instead of spreadsheets and chat threads.'
     ),
     image: imgCRM
   },
   {
-    title: localized('Marketplace / B2B решения', 'Marketplace / B2B чечимдери', 'Marketplace / B2B solutions'),
+    title: localized('Платежи и интеграции', 'Төлөмдөр жана интеграциялар', 'Payments and integrations'),
     description: localized(
-      'Проектируем B2B-платформы для поставщиков, заявок, оптовых заказов и партнерских кабинетов.',
-      'Жеткирүүчүлөр, билдирмелер, дүң заказдар жана өнөктөш кабинеттер үчүн B2B-платформаларды түзөбүз.',
-      'We design B2B platforms for suppliers, requests, wholesale orders, and partner dashboards.'
+      'Эквайринг, банковские и страховые API, фискальные чеки, SMS и карты — подключаем и отвечаем за работу.',
+      'Эквайринг, банк жана камсыздандыруу API, фискалдык чектер, SMS жана карталар — туташтырып, иштешине жооп беребиз.',
+      'Acquiring, banking and insurance APIs, fiscal receipts, SMS, and maps — we connect them and own the result.'
     ),
-    image: imgB2B
+    image: imgCreditCard,
+    fit: 'contain'
+  },
+  {
+    title: localized('Боты и мессенджеры', 'Боттор жана мессенджерлер', 'Bots and messengers'),
+    description: localized(
+      'Telegram, WhatsApp и Instagram: заявки, продажи и поддержка там, где клиент уже общается.',
+      'Telegram, WhatsApp жана Instagram: билдирмелер, сатуу жана колдоо — кардар мурунтан сүйлөшкөн жерде.',
+      'Telegram, WhatsApp, and Instagram: requests, sales, and support where your client already is.'
+    ),
+    image: imgSystem
+  },
+  {
+    title: localized('Публикация в сторах', 'Сторлорго жарыялоо', 'Store publishing'),
+    description: localized(
+      'Выводим в App Store и Google Play, проходим ревью, выпускаем обновления и следим за стабильностью.',
+      'App Store жана Google Play’ге чыгарабыз, ревьюдан өтөбүз, жаңыртууларды чыгарып, туруктуулугун көзөмөлдөйбүз.',
+      'We ship to the App Store and Google Play, pass review, release updates, and keep the product stable.'
+    ),
+    image: imgAppInstall,
+    fit: 'contain'
+  },
+  {
+    title: localized('Программы лояльности', 'Лоялдуулук программалары', 'Loyalty programs'),
+    description: localized(
+      'Кэшбэк, бонусные счета, уровни и акции — с админкой и аналитикой начислений.',
+      'Кешбэк, бонустук эсептер, деңгээлдер жана акциялар — админка жана эсептөө аналитикасы менен.',
+      'Cashback, bonus accounts, tiers, and promos — with an admin panel and payout analytics.'
+    ),
+    image: imgGiftCard,
+    fit: 'contain'
   }
 ]
 
@@ -956,7 +1041,7 @@ const extraCopy: Record<Language, ExtraCopy> = {
       'Создаём решения вместе — цифровые продукты, которые работают стабильно, запускаются вовремя и усиливают ваш бизнес.',
     contacts: 'Контакты',
     heroLead:
-      `${orderedStudioProjects.length} приложений в App Store и Google Play. Мобильная разработка, веб, игры и B2B-платформы — одной командой из 11 человек.`,
+      `${orderedStudioProjects.length} приложений в App Store и Google Play: медицина, финтех, страхование, e-commerce и доставка — одной командой полного цикла.`,
     heroCtaProjects: 'Смотреть проекты ↓',
     tickerLabel: 'Проекты, которые мы реализовали',
     tickerNote: 'От медицины и страхования до e-commerce и образования.',
@@ -980,7 +1065,7 @@ const extraCopy: Record<Language, ExtraCopy> = {
       'Чечимдерди бирге жаратабыз — туруктуу иштеген, өз убагында чыккан жана бизнесиңизди күчөткөн санарип продукттар.',
     contacts: 'Байланыш',
     heroLead:
-      `App Store жана Google Play’де ${orderedStudioProjects.length} тиркеме. Мобилдик иштеп чыгуу, веб, оюндар жана B2B-платформалар — 11 кишиден турган бир команда менен.`,
+      `App Store жана Google Play’де ${orderedStudioProjects.length} тиркеме: медицина, финтех, камсыздандыруу, e-commerce жана жеткирүү — толук циклдеги бир команда менен.`,
     heroCtaProjects: 'Долбоорлорду көрүү ↓',
     tickerLabel: 'Биз ишке ашырган долбоорлор',
     tickerNote: 'Медицинадан жана камсыздандыруудан e-commerce жана билим берүүгө чейин.',
@@ -1004,7 +1089,7 @@ const extraCopy: Record<Language, ExtraCopy> = {
       'Building solutions together — digital products that run reliably, launch on time, and strengthen your business.',
     contacts: 'Contacts',
     heroLead:
-      `${orderedStudioProjects.length} apps on the App Store and Google Play. Mobile, web, games, and B2B platforms — delivered by one team of 11.`,
+      `${orderedStudioProjects.length} apps on the App Store and Google Play: healthcare, fintech, insurance, e-commerce, and delivery — from one full-cycle team.`,
     heroCtaProjects: 'View projects ↓',
     tickerLabel: 'Projects we have delivered',
     tickerNote: 'From healthcare and insurance to e-commerce and education.',
@@ -1098,7 +1183,7 @@ const renderProjectCard = (project: StudioProject, index: number) => `
 
 const renderServiceCard = (service: ServiceCard) => `
   <article class="cell service-card">
-    <div class="service-media">
+    <div class="service-media${service.fit === 'contain' ? ' is-contain' : ''}">
       <img src="${service.image}" alt="${getText(service.title)}" loading="lazy" />
     </div>
     <h3>${getText(service.title)}</h3>
@@ -1117,13 +1202,21 @@ const renderLeaderCard = (leader: Leader) => `
   </article>
 `
 
-const tickerColumn = (titles: string[], direction: 'up' | 'down') => `
+const tickerColumn = (items: StudioProject[], direction: 'up' | 'down') => `
   <div class="ticker-col ticker-${direction}">
     <div class="ticker-track">
-      ${[...titles, ...titles]
+      ${[...items, ...items]
         .map(
-          (title, index) =>
-            `<span class="ticker-item" data-tone="${index % 3}">${title}</span>`
+          (project, index) => `
+        <span class="ticker-item" data-tone="${index % 3}">
+          ${
+            projectIcons[project.id]
+              ? `<img src="${projectIcons[project.id]}" alt="" loading="lazy" />`
+              : ''
+          }
+          <span>${project.title}</span>
+        </span>
+      `
         )
         .join('')}
     </div>
@@ -1166,7 +1259,6 @@ const renderPrivacy = () => `
 `
 
 const homeProjects = orderedStudioProjects.slice(0, HOME_PROJECTS_COUNT)
-const tickerTitles = orderedStudioProjects.map((project) => project.title)
 
 app.innerHTML = `
   <div class="shell">
@@ -1206,8 +1298,8 @@ app.innerHTML = `
           <div class="hero-side">
             <p class="kicker">${extra.tickerLabel}</p>
             <div class="ticker">
-              ${tickerColumn(tickerTitles.filter((_, index) => index % 2 === 0), 'up')}
-              ${tickerColumn(tickerTitles.filter((_, index) => index % 2 === 1), 'down')}
+              ${tickerColumn(orderedStudioProjects.filter((_, index) => index % 2 === 0), 'up')}
+              ${tickerColumn(orderedStudioProjects.filter((_, index) => index % 2 === 1), 'down')}
               <div class="ticker-fade" aria-hidden="true"></div>
             </div>
             <p class="muted small">${extra.tickerNote}</p>
