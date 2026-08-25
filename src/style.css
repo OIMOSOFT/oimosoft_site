@@ -282,7 +282,7 @@ button {
   flex-direction: column;
   justify-content: center;
   gap: 36px;
-  padding: 64px var(--pad) 48px;
+  padding: 96px var(--pad) 64px;
   border-right: 1px solid var(--line);
 }
 
@@ -322,7 +322,7 @@ button {
   flex-direction: column;
   justify-content: space-between;
   gap: 24px;
-  padding: 64px var(--pad) 48px;
+  padding: 96px var(--pad) 64px;
 }
 
 .ticker {
@@ -897,7 +897,7 @@ button {
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  padding: 28px var(--pad);
+  padding: 96px var(--pad) 64px;
   font-family: var(--display);
   font-size: 12px;
   letter-spacing: 0.08em;
