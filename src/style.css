@@ -187,6 +187,7 @@ button { color: inherit; }
 .store-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: auto; }
 .store-link { padding-bottom: 2px; border-bottom: 1px solid rgba(20,20,19,.3); font-family: var(--display); font-size: 10px; font-weight: 600; letter-spacing: .11em; text-transform: uppercase; transition: color .2s ease, border-color .2s ease; }
 .store-link:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
+.band-foot { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 28px var(--pad) 0; }
 .team-intro { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(310px, .62fr); width: min(100%, 1320px); gap: 18px 36px; margin: 0 auto; padding: clamp(48px, 4vw, 64px) var(--pad) clamp(26px, 2.5vw, 38px); }
 .team-intro .section-lead { grid-column: 2; grid-row: 1 / span 2; align-self: end; }
 .team-intro h2 { font-size: clamp(40px, 4.3vw, 66px); }
