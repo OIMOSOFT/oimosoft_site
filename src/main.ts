@@ -1116,8 +1116,10 @@ type ExtraCopy = {
   figuresLabel: string;
   statApps: string;
   servicesHeading: string;
+  viewAll: string;
   allProjectsTitle: string;
   backHome: string;
+  shownOf: (shown: number, total: number) => string;
   menu: string;
 };
 
@@ -1136,8 +1138,10 @@ const extraCopy: Record<Language, ExtraCopy> = {
     figuresLabel: "Цифры<br />и опыт",
     statApps: "приложений в App Store и Google Play",
     servicesHeading: "Что мы делаем",
+    viewAll: "Посмотреть все →",
     allProjectsTitle: "Все проекты",
     backHome: "← На главную",
+    shownOf: (shown, total) => `Показано ${shown} из ${total}`,
     menu: "Меню",
   },
   ky: {
@@ -1154,8 +1158,10 @@ const extraCopy: Record<Language, ExtraCopy> = {
     figuresLabel: "Сандар<br />жана тажрыйба",
     statApps: "App Store жана Google Play’деги тиркеме",
     servicesHeading: "Биз эмне кылабыз",
+    viewAll: "Баарын көрүү →",
     allProjectsTitle: "Бардык долбоорлор",
     backHome: "← Башкы бетке",
+    shownOf: (shown, total) => `${total} долбоордун ${shown} көрсөтүлдү`,
     menu: "Меню",
   },
   en: {
@@ -1173,8 +1179,10 @@ const extraCopy: Record<Language, ExtraCopy> = {
     figuresLabel: "Numbers<br />and experience",
     statApps: "apps on the App Store and Google Play",
     servicesHeading: "What we do",
+    viewAll: "View all →",
     allProjectsTitle: "All projects",
     backHome: "← Back home",
+    shownOf: (shown, total) => `Showing ${shown} of ${total}`,
     menu: "Menu",
   },
 };
@@ -1347,6 +1355,9 @@ const renderPrivacy = () => `
   </div>
 `;
 
+const HOME_PROJECTS_COUNT = 6;
+const homeProjects = orderedStudioProjects.slice(0, HOME_PROJECTS_COUNT);
+
 app.innerHTML = `
   <div class="shell">
     <header class="topbar">
@@ -1421,9 +1432,26 @@ app.innerHTML = `
           </div>
         </section>
 
+        <section class="band" id="projects">
+          <div class="section-head">
+            <div>
+              <p class="kicker">02 — ${copy.sections.projects.title}</p>
+              <h2>${copy.sections.projects.title}</h2>
+            </div>
+            <p class="section-lead">${copy.sections.projects.subtitle}</p>
+          </div>
+          <div class="grid grid-3">
+            ${homeProjects.map((project, index) => renderProjectCard(project, index)).join("")}
+          </div>
+          <div class="band-foot">
+            <span class="kicker">${extra.shownOf(homeProjects.length, orderedStudioProjects.length)}</span>
+            <a class="btn-outline" href="#all-projects">${extra.viewAll}</a>
+          </div>
+        </section>
+
         <section class="band" id="team">
           <div class="team-intro">
-            <p class="kicker" data-reveal="label">02 — ${copy.sections.leaders.title}</p>
+            <p class="kicker" data-reveal="label">03 — ${copy.sections.leaders.title}</p>
             <h2 data-reveal="heading">${copy.sections.leaders.title}</h2>
             <p class="section-lead" data-reveal="copy">${copy.sections.leaders.subtitle}</p>
           </div>
@@ -1436,7 +1464,7 @@ app.innerHTML = `
           <img class="contact-brand-mark" src="${logoUrl}" alt="" aria-hidden="true" />
           <div class="contact-aside" data-reveal="contact">
             <div>
-              <p class="kicker">03 — ${extra.contacts}</p>
+              <p class="kicker">04 — ${extra.contacts}</p>
               <h2>${copy.footer.title}</h2>
               <p class="muted">${copy.footer.description}</p>
             </div>
