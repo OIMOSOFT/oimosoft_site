@@ -139,7 +139,7 @@ button { color: inherit; }
 
 /* Editorial section heads */
 .band { padding: 0 0 clamp(52px, 4.6vw, 78px); }
-.band + .band { padding-top: clamp(8px, 1.6vw, 22px); }
+.band + .band { padding-top: clamp(56px, 6vw, 88px); }
 .section-head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr); align-items: end; gap: 34px; padding: var(--section-y) var(--pad) 36px; }
 .section-head h2, .team-intro h2, .services-intro h2 { max-width: 760px; margin-top: 14px; font-size: clamp(42px, 4.6vw, 72px); font-weight: 500; letter-spacing: -.065em; line-height: .95; }
 .section-lead { max-width: 470px; color: var(--ink-soft); font-size: clamp(16px, 1.3vw, 18px); line-height: 1.58; }
@@ -220,7 +220,7 @@ button { color: inherit; }
 .member-role { color: #777871; font-family: var(--display); font-size: 9px !important; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
 
 /* Contact */
-.contact { position: relative; display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); overflow: hidden; margin-top: clamp(8px, 2.2vw, 30px); background: radial-gradient(580px circle at 72% 16%, rgba(245,146,30,.22), transparent 60%), var(--ink); color: #fffefa; }
+.contact { position: relative; display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); overflow: hidden; margin-top: clamp(56px, 6.4vw, 94px); background: radial-gradient(580px circle at 72% 16%, rgba(245,146,30,.22), transparent 60%), var(--ink); color: #fffefa; }
 .contact-brand-mark { position: absolute; z-index: 0; right: clamp(30px, 7vw, 148px); bottom: -26px; width: clamp(150px, 15vw, 270px); opacity: .2; filter: saturate(.9); transform: rotate(-8deg); pointer-events: none; }
 .contact::before { position: absolute; top: -32%; right: 13%; width: min(42vw, 560px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(255, 210, 90, .18), rgba(245,146,30,0) 68%); content: ''; pointer-events: none; }
 .contact-aside { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 34px; min-height: 430px; padding: clamp(40px, 4.2vw, 60px) var(--pad); }
