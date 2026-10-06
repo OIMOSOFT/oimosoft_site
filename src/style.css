@@ -264,6 +264,9 @@ button { color: inherit; }
 .privacy-body a { border-bottom: 1px solid var(--ink); }
 .sitefoot { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 20px var(--pad) 24px; background: var(--ink); color: #aeadA6; font-family: var(--display); font-size: 11px; letter-spacing: .08em; }
 .sitefoot .underline-link { border-color: rgba(255,255,255,.42); color: #d3d2cb; }
+.sitefoot .seo-links { display: flex; flex: 1 1 100%; flex-wrap: wrap; gap: 8px 18px; padding-bottom: 4px; }
+.sitefoot .seo-links a { color: #aeada6; font-size: 11px; text-decoration: none; }
+.sitefoot .seo-links a:hover { color: #fff; }
 .sitefoot-side, .socials { display: flex; align-items: center; gap: 21px; }
 .socials a { transition: color .2s ease, transform .2s ease; }
 .socials a:hover { color: var(--accent-deep); transform: translateY(-2px); }

@@ -1543,6 +1543,15 @@ app.innerHTML = `
 
     <footer class="sitefoot">
       <div>© ${new Date().getFullYear()} OimoSoft. ${copy.footer.rights}</div>
+      <nav class="seo-links" aria-label="OimoSoft">
+        <a href="/it-kompaniya-osh/">IT компания в Оше</a>
+        <a href="/razrabotka-mobilnyh-prilozhenij/">Мобильные приложения</a>
+        <a href="/razrabotka-saitov/">Разработка сайтов</a>
+        <a href="/flutter-razrabotka/">Flutter</a>
+        <a href="/crm-avtomatizaciya-biznesa/">CRM</a>
+        <a href="/telegram-boty/">Telegram-боты</a>
+        <a href="/mustafa-nabiev/">Мустафа Набиев</a>
+      </nav>
       <div class="sitefoot-side">
         <a class="underline-link small" href="#privacy">${copy.footer.privacy}</a>
         <div class="socials">
