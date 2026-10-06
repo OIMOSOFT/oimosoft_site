@@ -143,7 +143,7 @@ const uiCopy = {
       services: {
         title: "Сервис",
         subtitle:
-          "Разработка мобильных приложений и сайтов на заказ: Flutter, backend и API, CRM, интеграции, публикация в App Store и Google Play и поддержка после релиза.",
+          "От идеи до релиза: мобильные приложения, сайты, CRM и серверная часть. После запуска остаёмся рядом и развиваем продукт.",
       },
       leaders: {
         title: "Команда",
@@ -273,7 +273,7 @@ const uiCopy = {
       services: {
         title: "Кызматтар",
         subtitle:
-          "Мобилдик тиркемелерди жана сайттарды заказ боюнча жасайбыз: Flutter, backend жана API, CRM, интеграциялар, App Store жана Google Play’ге жарыялоо жана релизден кийинки колдоо.",
+          "Идеядан релизге чейин: мобилдик тиркемелер, сайттар, CRM жана сервер бөлүгү. Ишке киргизгенден кийин да жанындабыз жана продуктуну өнүктүрөбүз.",
       },
       leaders: {
         title: "Команда",
@@ -404,7 +404,7 @@ const uiCopy = {
       services: {
         title: "Services",
         subtitle:
-          "Custom mobile app and website development: Flutter, backend and APIs, CRM, integrations, App Store and Google Play publishing, and post-release support.",
+          "From idea to release: mobile apps, websites, CRM, and the backend. After launch we stay close and keep growing the product.",
       },
       leaders: {
         title: "Team",
