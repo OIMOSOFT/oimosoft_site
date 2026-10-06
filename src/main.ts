@@ -127,7 +127,7 @@ const uiCopy = {
     hero: {
       title: "OIMOSOFT — создаём решения вместе",
       description:
-        "Создаем цифровые продукты, которые работают стабильно, запускаются вовремя и усиливают ваш бизнес.",
+        "OimoSoft (Оймософт) — IT компания из Оша. Разрабатываем мобильные приложения, сайты и серверные системы под ключ: работают стабильно, запускаются вовремя и усиливают ваш бизнес.",
       stats: [
         "крупных проектов",
         "малых запусков",
@@ -138,12 +138,12 @@ const uiCopy = {
       projects: {
         title: "Проекты",
         subtitle:
-          "Медицина, страхование, финтех, e-commerce, образование и доставка — все проекты со ссылками на сторы.",
+          "Приложения и сайты для медицины, страхования, финтеха, e-commerce, образования и доставки — реализованные проекты OimoSoft со ссылками на сторы.",
       },
       services: {
         title: "Сервис",
         subtitle:
-          "Ведем продукт целиком: мобильная и серверная разработка, публикация в сторах и поддержка после релиза.",
+          "Разработка мобильных приложений и сайтов на заказ: Flutter, backend и API, CRM, интеграции, публикация в App Store и Google Play и поддержка после релиза.",
       },
       leaders: {
         title: "Команда",
@@ -257,7 +257,7 @@ const uiCopy = {
     hero: {
       title: "OIMOSOFT — чечимдерди бирге жаратабыз",
       description:
-        "Туруктуу иштеген, өз убагында чыккан жана бизнесиңизди күчөткөн санарип продукттарды жасайбыз.",
+        "OimoSoft (Оймософт) — Ош шаарындагы IT компания. Мобилдик тиркемелерди, сайттарды жана сервердик системаларды толугу менен жасайбыз: туруктуу иштейт, өз убагында чыгат жана бизнесиңизди күчөтөт.",
       stats: [
         "ири долбоор",
         "чакан ишке киргизүү",
@@ -268,12 +268,12 @@ const uiCopy = {
       projects: {
         title: "Долбоорлор",
         subtitle:
-          "Медицина, камсыздандыруу, финтех, e-commerce, билим берүү жана жеткирүү — бардык долбоорлор стор шилтемелери менен.",
+          "Медицина, камсыздандыруу, финтех, e-commerce, билим берүү жана жеткирүү боюнча тиркемелер жана сайттар — OimoSoft ишке ашырган долбоорлор стор шилтемелери менен.",
       },
       services: {
         title: "Кызматтар",
         subtitle:
-          "Продуктту толугу менен алып барабыз: мобилдик жана сервердик иштеп чыгуу, сторлорго жарыялоо жана релизден кийинки колдоо.",
+          "Мобилдик тиркемелерди жана сайттарды заказ боюнча жасайбыз: Flutter, backend жана API, CRM, интеграциялар, App Store жана Google Play’ге жарыялоо жана релизден кийинки колдоо.",
       },
       leaders: {
         title: "Команда",
@@ -388,7 +388,7 @@ const uiCopy = {
     hero: {
       title: "OIMOSOFT — building solutions together",
       description:
-        "We build digital products that run reliably, launch on time, and strengthen your business.",
+        "OimoSoft is an IT company from Osh, Kyrgyzstan. We build mobile apps, websites, and backend systems end to end — reliable, on time, and built to strengthen your business.",
       stats: [
         "large projects",
         "smaller launches",
@@ -399,12 +399,12 @@ const uiCopy = {
       projects: {
         title: "Projects",
         subtitle:
-          "Healthcare, insurance, fintech, e-commerce, education, and delivery — every project with live store links.",
+          "Apps and websites for healthcare, insurance, fintech, e-commerce, education, and delivery — completed OimoSoft projects with live store links.",
       },
       services: {
         title: "Services",
         subtitle:
-          "We run the whole product: mobile and backend development, store publishing, and post-release support.",
+          "Custom mobile app and website development: Flutter, backend and APIs, CRM, integrations, App Store and Google Play publishing, and post-release support.",
       },
       leaders: {
         title: "Team",
