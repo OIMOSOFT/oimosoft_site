@@ -976,6 +976,7 @@ const studioProjects: StudioProject[] = [
 
 const preferredProjectOrder = [
   "belgi",
+  "oshsu-library",
   "ayda-taxi",
   "sez-us",
   "fresh-mag",
