@@ -24,6 +24,7 @@ import iconSezUs from "./assets/app-icons/sez-us.jpg";
 import iconSikaProClub from "./assets/app-icons/sika-pro-club.jpg";
 import iconStudent from "./assets/app-icons/student.png";
 import iconTilbil from "./assets/app-icons/tilbil.png";
+import iconOshsuLibrary from "./assets/app-icons/oshsu-library.svg";
 import imgMp from "./assets/mp.jpeg";
 import imgSait from "./assets/sait.jpeg";
 import imgB2B from "./assets/B2B.jpeg";
@@ -109,6 +110,7 @@ const projectIcons: Record<string, string> = {
   "sika-pro-club": iconSikaProClub,
   student: iconStudent,
   tilbil: iconTilbil,
+  "oshsu-library": iconOshsuLibrary,
 };
 const WHATSAPP_NUMBER = "996507158857";
 
@@ -955,6 +957,21 @@ const studioProjects: StudioProject[] = [
       },
     ],
   },
+  {
+    id: "oshsu-library",
+    title: "Электронная библиотека ОшГУ",
+    summary: localized(
+      "Электронная библиотека Ошского государственного университета: каталог книг и учебных материалов онлайн.",
+      "Ош мамлекеттик университетинин электрондук китепканасы: китептердин жана окуу материалдарынын онлайн каталогу.",
+      "Electronic library of Osh State University: an online catalog of books and study materials.",
+    ),
+    links: [
+      {
+        label: "Website",
+        url: "https://lib2.oshsu.kg/",
+      },
+    ],
+  },
 ];
 
 const preferredProjectOrder = [
@@ -1406,7 +1423,7 @@ app.innerHTML = `
         <section class="stats">
           <div class="stat-label">${extra.figuresLabel}</div>
           <div class="stat">
-            <div class="stat-value">${orderedStudioProjects.length}<span>+</span></div>
+            <div class="stat-value">20<span>+</span></div>
             <p>${extra.statApps}</p>
           </div>
           <div class="stat">
@@ -1414,7 +1431,7 @@ app.innerHTML = `
             <p>${copy.hero.stats[1]}</p>
           </div>
           <div class="stat">
-            <div class="stat-value">5<span>+</span></div>
+            <div class="stat-value">6<span>+</span></div>
             <p>${copy.hero.stats[2]}</p>
           </div>
         </section>
