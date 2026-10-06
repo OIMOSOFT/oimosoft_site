@@ -143,7 +143,7 @@ const uiCopy = {
       services: {
         title: "Сервис",
         subtitle:
-          "От идеи до релиза: мобильные приложения, сайты, CRM и серверная часть. После запуска остаёмся рядом и развиваем продукт.",
+          "От идеи до релиза: мобильные приложения, сайты и личные кабинеты, интернет-магазины и маркетплейсы, B2B-платформы, CRM и админ-панели, Telegram-боты, серверная часть и API, платежи и интеграции, программы лояльности, сервисы доставки и такси, учёт рабочего времени. Публикуем в App Store и Google Play, после запуска остаёмся рядом и развиваем продукт.",
       },
       leaders: {
         title: "Команда",
@@ -273,7 +273,7 @@ const uiCopy = {
       services: {
         title: "Кызматтар",
         subtitle:
-          "Идеядан релизге чейин: мобилдик тиркемелер, сайттар, CRM жана сервер бөлүгү. Ишке киргизгенден кийин да жанындабыз жана продуктуну өнүктүрөбүз.",
+          "Идеядан релизге чейин: мобилдик тиркемелер, сайттар жана жеке кабинеттер, онлайн дүкөндөр жана маркетплейстер, B2B платформалар, CRM жана админ-панелдер, Telegram-боттор, сервер бөлүгү жана API, төлөмдөр жана интеграциялар, лоялдуулук программалары, жеткирүү жана такси сервистери, жумуш убактысын эсепке алуу. App Store жана Google Play’ге жарыялайбыз, ишке киргизгенден кийин да жанындабыз жана продуктуну өнүктүрөбүз.",
       },
       leaders: {
         title: "Команда",
@@ -404,7 +404,7 @@ const uiCopy = {
       services: {
         title: "Services",
         subtitle:
-          "From idea to release: mobile apps, websites, CRM, and the backend. After launch we stay close and keep growing the product.",
+          "From idea to release: mobile apps, websites and user dashboards, online stores and marketplaces, B2B platforms, CRM and admin panels, Telegram bots, the backend and APIs, payments and integrations, loyalty programs, delivery and taxi services, time tracking. We publish to the App Store and Google Play, and after launch we stay close and keep growing the product.",
       },
       leaders: {
         title: "Team",
