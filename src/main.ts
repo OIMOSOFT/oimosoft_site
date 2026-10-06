@@ -127,7 +127,7 @@ const uiCopy = {
     hero: {
       title: "OIMOSOFT — создаём решения вместе",
       description:
-        "OimoSoft (Оймософт) — IT компания из Оша. Разрабатываем мобильные приложения, сайты и серверные системы под ключ: работают стабильно, запускаются вовремя и усиливают ваш бизнес.",
+        "Разрабатываем мобильные приложения, сайты и серверные системы под ключ: работают стабильно, запускаются вовремя и усиливают ваш бизнес.",
       stats: [
         "крупных проектов",
         "малых запусков",
@@ -257,7 +257,7 @@ const uiCopy = {
     hero: {
       title: "OIMOSOFT — чечимдерди бирге жаратабыз",
       description:
-        "OimoSoft (Оймософт) — Ош шаарындагы IT компания. Мобилдик тиркемелерди, сайттарды жана сервердик системаларды толугу менен жасайбыз: туруктуу иштейт, өз убагында чыгат жана бизнесиңизди күчөтөт.",
+        "Мобилдик тиркемелерди, сайттарды жана сервердик системаларды толугу менен жасайбыз: туруктуу иштейт, өз убагында чыгат жана бизнесиңизди күчөтөт.",
       stats: [
         "ири долбоор",
         "чакан ишке киргизүү",
@@ -388,7 +388,7 @@ const uiCopy = {
     hero: {
       title: "OIMOSOFT — building solutions together",
       description:
-        "OimoSoft is an IT company from Osh, Kyrgyzstan. We build mobile apps, websites, and backend systems end to end — reliable, on time, and built to strengthen your business.",
+        "We build mobile apps, websites, and backend systems end to end — reliable, on time, and built to strengthen your business.",
       stats: [
         "large projects",
         "smaller launches",
