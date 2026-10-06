@@ -998,6 +998,66 @@ const orderedStudioProjects = [...studioProjects].sort((a, b) => {
   return aOrder - bOrder;
 });
 
+const seoLinks: Record<Language, Array<[string, string]>> = {
+  ru: [
+    ["/it-kompaniya-osh/", "IT компания в Оше"],
+    ["/razrabotka-mobilnyh-prilozhenij/", "Мобильные приложения"],
+    ["/razrabotka-saitov/", "Разработка сайтов"],
+    ["/flutter-razrabotka/", "Flutter"],
+    ["/crm-avtomatizaciya-biznesa/", "CRM"],
+    ["/telegram-boty/", "Telegram-боты"],
+    ["/mustafa-nabiev/", "Мустафа Набиев"],
+    ["/ky/", "Кыргызча"],
+    ["/en/", "English"],
+  ],
+  ky: [
+    ["/ky/", "Ош шаарындагы IT компания"],
+    ["/ky/razrabotka-mobilnyh-prilozhenij/", "Мобилдик тиркемелер"],
+    ["/ky/razrabotka-saitov/", "Сайт жасоо"],
+    ["/ky/flutter-razrabotka/", "Flutter"],
+    ["/ky/crm-avtomatizaciya-biznesa/", "CRM"],
+    ["/ky/telegram-boty/", "Telegram-боттор"],
+    ["/ky/mustafa-nabiev/", "Мустафа Набиев"],
+    ["/it-kompaniya-osh/", "Русский"],
+    ["/en/", "English"],
+  ],
+  en: [
+    ["/en/", "IT company in Osh"],
+    ["/en/razrabotka-mobilnyh-prilozhenij/", "Mobile apps"],
+    ["/en/razrabotka-saitov/", "Website development"],
+    ["/en/flutter-razrabotka/", "Flutter"],
+    ["/en/crm-avtomatizaciya-biznesa/", "CRM"],
+    ["/en/telegram-boty/", "Telegram bots"],
+    ["/en/mustafa-nabiev/", "Mustafa Nabiev"],
+    ["/it-kompaniya-osh/", "Русский"],
+    ["/ky/", "Кыргызча"],
+  ],
+};
+
+const seoMeta: Record<Language, { title: string; description: string }> = {
+  ru: {
+    title: "OimoSoft (Оймософт) — IT компания в Оше | Разработка приложений и сайтов",
+    description:
+      "OimoSoft (Оймософт, Оймо Софт) — IT компания в Оше, Кыргызстан. Разработка мобильных приложений на Flutter, сайтов, CRM, backend и API под ключ. Основатель — Мустафа Набиев. 20+ реализованных проектов.",
+  },
+  ky: {
+    title: "OimoSoft (Оймософт) — Ош шаарындагы IT компания | Тиркеме жана сайт жасоо",
+    description:
+      "OimoSoft (Оймософт) — Ош шаарындагы, Кыргызстандагы IT компания. Flutter мобилдик тиркемелери, сайттар, CRM, backend жана API толугу менен. Негиздөөчү — Мустафа Набиев. 20+ ишке ашырылган долбоор.",
+  },
+  en: {
+    title: "OimoSoft — IT Company in Osh, Kyrgyzstan | Mobile App and Website Development",
+    description:
+      "OimoSoft is an IT company in Osh, Kyrgyzstan. Flutter mobile apps, websites, CRM, backend and APIs end to end. Founded by Mustafa Nabiev. 20+ completed projects.",
+  },
+};
+
+document.documentElement.lang = currentLanguage;
+document.title = seoMeta[currentLanguage].title;
+document
+  .querySelector('meta[name="description"]')
+  ?.setAttribute("content", seoMeta[currentLanguage].description);
+
 const app = document.querySelector<HTMLDivElement>("#app");
 if (!app) throw new Error("App container not found");
 
@@ -1544,13 +1604,7 @@ app.innerHTML = `
     <footer class="sitefoot">
       <div>© ${new Date().getFullYear()} OimoSoft. ${copy.footer.rights}</div>
       <nav class="seo-links" aria-label="OimoSoft">
-        <a href="/it-kompaniya-osh/">IT компания в Оше</a>
-        <a href="/razrabotka-mobilnyh-prilozhenij/">Мобильные приложения</a>
-        <a href="/razrabotka-saitov/">Разработка сайтов</a>
-        <a href="/flutter-razrabotka/">Flutter</a>
-        <a href="/crm-avtomatizaciya-biznesa/">CRM</a>
-        <a href="/telegram-boty/">Telegram-боты</a>
-        <a href="/mustafa-nabiev/">Мустафа Набиев</a>
+        ${seoLinks[currentLanguage].map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
       </nav>
       <div class="sitefoot-side">
         <a class="underline-link small" href="#privacy">${copy.footer.privacy}</a>
