@@ -1000,7 +1000,7 @@ const orderedStudioProjects = [...studioProjects].sort((a, b) => {
 
 const seoLinks: Record<Language, Array<[string, string]>> = {
   ru: [
-    ["/it-kompaniya-osh/", "IT компания в Оше"],
+    ["/it-kompaniya-osh/", "IT компания в Кыргызстане"],
     ["/razrabotka-mobilnyh-prilozhenij/", "Мобильные приложения"],
     ["/razrabotka-saitov/", "Разработка сайтов"],
     ["/flutter-razrabotka/", "Flutter"],
@@ -1011,7 +1011,7 @@ const seoLinks: Record<Language, Array<[string, string]>> = {
     ["/en/", "English"],
   ],
   ky: [
-    ["/ky/", "Ош шаарындагы IT компания"],
+    ["/ky/", "Кыргызстандагы IT компания"],
     ["/ky/razrabotka-mobilnyh-prilozhenij/", "Мобилдик тиркемелер"],
     ["/ky/razrabotka-saitov/", "Сайт жасоо"],
     ["/ky/flutter-razrabotka/", "Flutter"],
@@ -1022,7 +1022,7 @@ const seoLinks: Record<Language, Array<[string, string]>> = {
     ["/en/", "English"],
   ],
   en: [
-    ["/en/", "IT company in Osh"],
+    ["/en/", "IT company in Kyrgyzstan"],
     ["/en/razrabotka-mobilnyh-prilozhenij/", "Mobile apps"],
     ["/en/razrabotka-saitov/", "Website development"],
     ["/en/flutter-razrabotka/", "Flutter"],
@@ -1036,19 +1036,19 @@ const seoLinks: Record<Language, Array<[string, string]>> = {
 
 const seoMeta: Record<Language, { title: string; description: string }> = {
   ru: {
-    title: "OimoSoft (Оймософт) — IT компания в Оше | Разработка приложений и сайтов",
+    title: "OimoSoft (Оймософт) — IT компания в Кыргызстане | Разработка приложений и сайтов",
     description:
-      "OimoSoft (Оймософт, Оймо Софт) — IT компания в Оше, Кыргызстан. Разработка мобильных приложений на Flutter, сайтов, CRM, backend и API под ключ. Основатель — Мустафа Набиев. 20+ реализованных проектов.",
+      "OimoSoft (Оймософт, Оймо Софт) — IT компания из Кыргызстана. Разработка мобильных приложений на Flutter, сайтов, CRM, backend и API под ключ. Основатель — Мустафа Набиев. 20+ реализованных проектов.",
   },
   ky: {
-    title: "OimoSoft (Оймософт) — Ош шаарындагы IT компания | Тиркеме жана сайт жасоо",
+    title: "OimoSoft (Оймософт) — Кыргызстандагы IT компания | Тиркеме жана сайт жасоо",
     description:
-      "OimoSoft (Оймософт) — Ош шаарындагы, Кыргызстандагы IT компания. Flutter мобилдик тиркемелери, сайттар, CRM, backend жана API толугу менен. Негиздөөчү — Мустафа Набиев. 20+ ишке ашырылган долбоор.",
+      "OimoSoft (Оймософт) — Кыргызстандагы IT компания. Flutter мобилдик тиркемелери, сайттар, CRM, backend жана API толугу менен. Негиздөөчү — Мустафа Набиев. 20+ ишке ашырылган долбоор.",
   },
   en: {
-    title: "OimoSoft — IT Company in Osh, Kyrgyzstan | Mobile App and Website Development",
+    title: "OimoSoft — IT Company in Kyrgyzstan | Mobile App and Website Development",
     description:
-      "OimoSoft is an IT company in Osh, Kyrgyzstan. Flutter mobile apps, websites, CRM, backend and APIs end to end. Founded by Mustafa Nabiev. 20+ completed projects.",
+      "OimoSoft is an IT company in Kyrgyzstan. Flutter mobile apps, websites, CRM, backend and APIs end to end. Founded by Mustafa Nabiev. 20+ completed projects.",
   },
 };
 
